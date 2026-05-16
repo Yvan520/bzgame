@@ -275,7 +275,8 @@ const gameColors = [
 // ======================== ROUTER ========================
 
 function navigate(hash) {
-  const cleanHash = hash.replace('#', '') || 'home';
+  const raw = hash.replace('#', '') || 'home';
+  const cleanHash = (() => { try { return decodeURIComponent(raw); } catch { return raw; } })();
 
   if (cleanHash.startsWith('guide/')) {
     const guideId = cleanHash.replace('guide/', '');
@@ -363,7 +364,7 @@ function renderRankingsPreview() {
   const el = document.getElementById('rankingsPreview');
   const sorted = [...GAMES].sort((a, b) => (b.earnMax + b.earnMin) - (a.earnMax + a.earnMin));
   el.innerHTML = sorted.slice(0, 6).map((game, i) => `
-    <div class="ranking-item" onclick="navigate('#game/${game.name}')">
+    <div class="ranking-item" onclick="location.hash='#game/${game.name}'">
       <span class="ranking-number">${i + 1}</span>
       <div class="ranking-info">
         <div class="ranking-name">
@@ -387,7 +388,7 @@ function renderGameGrid(filter) {
   const el = document.getElementById('gameGrid');
   const filtered = filter && filter !== 'all' ? GAMES.filter(g => g.name === filter || g.tags.includes(filter)) : GAMES;
   el.innerHTML = filtered.map(game => `
-    <div class="game-card" onclick="navigate('#game/${game.name}')">
+    <div class="game-card" onclick="location.hash='#game/${game.name}'">
       <span class="game-card-icon">${game.icon}</span>
       <div class="game-card-name">${game.name}</div>
       <div class="game-card-genre">${game.genre}</div>
@@ -414,7 +415,7 @@ function renderGuideGrid(filter) {
     const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
-    <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();navigate('#guide/${guide.id}')}">
+    <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
       <div class="guide-card-image" style="background: linear-gradient(135deg, ${bgColor}, ${bgColor}88);">
         <div class="guide-tags">
           <span class="guide-tag">${guide.game}</span>
@@ -432,6 +433,10 @@ function renderGuideGrid(filter) {
       </div>
     </a>
   `}).join('');
+
+  if (filtered.length === 0) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📝</div><div class="empty-state-text">暂无私攻略</div></div>`;
+  }
 }
 
 // ---- Calculator ----
@@ -565,7 +570,7 @@ function renderRankingsFull() {
   const filtered = searchTerm ? sorted.filter(g => g.name.toLowerCase().includes(searchTerm)) : sorted;
 
   el.innerHTML = filtered.map((game, i) => `
-    <div class="ranking-item" onclick="navigate('#game/${game.name}')">
+    <div class="ranking-item" onclick="location.hash='#game/${game.name}'">
       <span class="ranking-number">${i + 1}</span>
       <div class="ranking-info">
         <div class="ranking-name">
@@ -610,7 +615,7 @@ function renderGamesFull() {
   const searched = searchTerm ? filtered.filter(g => g.name.toLowerCase().includes(searchTerm)) : filtered;
 
   el.innerHTML = searched.map(game => `
-    <div class="game-card" onclick="navigate('#game/${game.name}')">
+    <div class="game-card" onclick="location.hash='#game/${game.name}'">
       <span class="game-card-icon">${game.icon}</span>
       <div class="game-card-name">${game.name}</div>
       <div class="game-card-genre">${game.genre}</div>
@@ -645,7 +650,7 @@ function renderGuidesPage(filtered, activeFilter) {
     const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
-    <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();navigate('#guide/${guide.id}')}">
+    <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
       <div class="guide-card-image" style="background: linear-gradient(135deg, ${bgColor}, ${bgColor}88);">
         <div class="guide-tags">
           <span class="guide-tag">${guide.game}</span>
@@ -705,11 +710,11 @@ function setupSearch() {
     const foundGame = GAMES.find(g => g.name.toLowerCase().includes(q));
     const foundGuide = GUIDES.find(g => g.title.toLowerCase().includes(q) || g.game.toLowerCase().includes(q));
     if (foundGame) {
-      navigate('#game/' + foundGame.name);
+      location.hash = '#game/' + foundGame.name;
     } else if (foundGuide) {
-      navigate('#guide/' + foundGuide.id);
+      location.hash = '#guide/' + foundGuide.id;
     } else {
-      navigate('#guides');
+      location.hash = '#guides';
     }
   };
 
