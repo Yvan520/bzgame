@@ -292,7 +292,7 @@ function navigate(hash) {
     const gameName = cleanHash.replace('game/', '');
     const game = GAMES.find(g => g.name === gameName);
     if (game) {
-      const filtered = GUIDES.filter(g => g.game === gameName || g.game.includes(gameName));
+      const filtered = GUIDES.filter(g => g.game === gameName || gameName.includes(g.game));
       state.gamesFilter = gameName;
       switchPage('guides');
       renderGuidesPage(filtered, gameName);
@@ -401,7 +401,7 @@ function renderGameGrid(filter) {
 // ---- Guide Grid ----
 function renderGuideGrid(filter) {
   const el = document.getElementById('guideGrid');
-  const filtered = filter === 'all' ? GUIDES : GUIDES.filter(g => g.game === filter || g.game.includes(filter));
+  const filtered = filter === 'all' ? GUIDES : GUIDES.filter(g => g.game === filter || filter.includes(g.game) || g.game.includes(filter));
 
   if (filtered.length === 0) {
     el.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📝</div><div class="empty-state-text">暂无私攻略</div></div>`;
