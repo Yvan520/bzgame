@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yvan520.github.io/bzgame/sitemap.xml
+Sitemap: https://bzgame.gamewayz.com/sitemap.xml
