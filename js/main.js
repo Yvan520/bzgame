@@ -605,11 +605,18 @@ const state = {
   gamesFilter: 'all',
 };
 
-const gameColors = [
-  '#e74c3c', '#3498db', '#f39c12', '#2ecc71', '#9b59b6',
-  '#1abc9c', '#e67e22', '#34495e', '#16a085', '#c0392b',
-  '#2980b9', '#8e44ad',
-];
+const gameTheme = {
+  '梦幻西游': '#e74c3c','逆水寒': '#3498db','三角洲行动': '#f39c12','魔兽世界': '#9b59b6',
+  '流放之路': '#1abc9c','DNF': '#e74c3c','火炬之光': '#1abc9c','失落方舟': '#9b59b6',
+  '星际战甲': '#e74c3c','阿尔比恩': '#e74c3c','天龙八部': '#3498db','大话西游2': '#f39c12',
+  '问道': '#2ecc71','剑网3': '#1abc9c','EVE': '#9b59b6','倩女幽魂手游': '#e91e63',
+  '阴阳师': '#ff5722','桃花源记手游': '#ff9800','热血传奇手机版': '#d32f2f',
+  '明日之后': '#4caf50','彩虹岛': '#ff6f00','烟雨江湖': '#00bcd4',
+  '天涯明月刀手游': '#3f51b5','六道OL': '#673ab7','魔力宝贝复兴': '#009688',
+  '原神': '#ffd54f','崩坏：星穹铁道': '#7c4dff','永劫无间': '#ff5252',
+  '一梦江湖': '#448aff','完美世界手游': '#69f0ae','诛仙手游': '#e040fb',
+};
+const gameColors = Object.values(gameTheme).filter((v,i,a)=>a.indexOf(v)===i);
 
 // ======================== ROUTER ========================
 
@@ -749,8 +756,7 @@ function renderGuideGrid(filter) {
   }
 
   el.innerHTML = filtered.map(guide => {
-    const colors = ['#e74c3c', '#3498db', '#f39c12', '#2ecc71', '#9b59b6'];
-    const bgColor = colors[Math.floor(Math.random() * colors.length)];
+    const bgColor = gameTheme[guide.game] || '#e74c3c';
     const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
@@ -984,8 +990,7 @@ function renderGuidesPage(filtered, activeFilter) {
   }
 
   el.innerHTML = items.map(guide => {
-    const colors = ['#e74c3c', '#3498db', '#f39c12', '#2ecc71', '#9b59b6', '#1abc9c'];
-    const bgColor = colors[Math.floor(Math.random() * colors.length)];
+    const bgColor = gameTheme[guide.game] || '#e74c3c';
     const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
