@@ -1,0 +1,83 @@
+/* ============================================
+   搬砖营地 BrickCamp - Guide/Page Stylesheet
+   Matches main site dark industrial theme
+   ============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #08080c; --surface: #14141f; --border: #2a2a3e;
+  --gold: #f5b342; --gold-dim: #8b6914; --gold-glow: rgba(245,179,66,0.15);
+  --text: #f0ede8; --text2: #a09e9c; --text3: #6b6a68;
+  --radius: 12px; --font: -apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+}
+body {
+  font-family: var(--font); background: var(--bg); color: var(--text);
+  line-height: 1.8; -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 60% 40% at 50% 20%, rgba(245,179,66,0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 80%, rgba(59,130,246,0.02) 0%, transparent 50%);
+  min-height: 100vh;
+}
+.container {
+  max-width: 800px; margin: 0 auto; padding: 48px 24px 64px;
+  position: relative;
+}
+.container::before {
+  content: ''; position: absolute; top: 0; left: 24px; right: 24px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
+  border-radius: 2px;
+}
+h1 {
+  font-size: 30px; font-weight: 900; color: var(--text);
+  margin-bottom: 8px; line-height: 1.3; letter-spacing: -0.5px;
+}
+.meta {
+  display: flex; flex-wrap: wrap; gap: 16px;
+  color: var(--text3); font-size: 13px; margin-bottom: 32px;
+  padding-bottom: 20px; border-bottom: 1px solid var(--border);
+}
+.meta span { display: flex; align-items: center; gap: 4px; }
+h2 {
+  font-size: 22px; font-weight: 800; color: var(--gold);
+  margin: 36px 0 16px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+h2::before {
+  content: '◆ '; color: var(--gold-dim); font-size: 14px;
+}
+p {
+  color: var(--text2); font-size: 15px; margin-bottom: 16px; line-height: 1.9;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 20px 0 28px;
+  font-size: 14px; border-radius: var(--radius); overflow: hidden;
+}
+th {
+  background: #1a1a2e; color: var(--gold); padding: 12px 14px;
+  text-align: left; font-weight: 700; border: 1px solid var(--border);
+  font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+td {
+  padding: 11px 14px; border: 1px solid var(--border);
+  color: var(--text2);
+}
+tr:nth-child(even) td { background: #0e0e18; }
+tr:hover td { background: #1a1a28; }
+.back {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 40px; padding: 12px 28px;
+  background: var(--gold-glow); border: 1px solid var(--gold-dim);
+  border-radius: 8px; color: var(--gold); text-decoration: none;
+  font-size: 14px; font-weight: 600; font-family: var(--font);
+  transition: 0.3s ease; cursor: pointer;
+}
+.back:hover {
+  background: var(--gold); color: #0a0a0f; transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  .container { padding: 32px 16px 48px; }
+  h1 { font-size: 24px; }
+  table { font-size: 12px; }
+  th, td { padding: 8px 10px; }
+}
