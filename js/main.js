@@ -773,6 +773,7 @@ const PLATFORMS = [
 const state = {
   currentPage: 'home',
   currentGuide: null,
+  currentGame: null,
   calcGameIndex: 0,
   calcHours: 4,
   guideFilter: 'all',
@@ -817,10 +818,9 @@ function navigate(hash) {
     const gameName = cleanHash.replace('game/', '');
     const game = GAMES.find(g => g.name === gameName);
     if (game) {
-      const filtered = GUIDES.filter(g => g.game === gameName || gameName.includes(g.game));
-      state.gamesFilter = gameName;
-      switchPage('guides');
-      renderGuidesPage(filtered, gameName);
+      state.currentGame = game;
+      switchPage('game-detail');
+      renderGameDetail(game);
       return;
     }
   }
@@ -905,6 +905,85 @@ function renderRankingsPreview() {
       <span class="ranking-change ${game.change}">${getChangeIcon(game.change)} ${game.changeText}</span>
     </div>
   `).join('');
+}
+
+// ---- Game Detail Page ----
+function renderGameDetail(game) {
+  const el = document.getElementById('gameDetail');
+  const guides = GUIDES.filter(g => g.game === game.name);
+  const related = GAMES.filter(g => g.id !== game.id && g.genre.split(' · ')[0] === game.genre.split(' · ')[0]).slice(0, 4);
+  const sorted = [...GAMES].sort((a, b) => (b.earnMax + b.earnMin) - (a.earnMax + a.earnMin));
+  const rank = sorted.findIndex(g => g.id === game.id) + 1;
+
+  el.innerHTML = `
+    <div class="game-detail-hero">
+      <div class="gd-icon">${game.icon}</div>
+      <div class="gd-info">
+        <h1>${game.name}</h1>
+        <div class="gd-meta">
+          <span class="gd-genre">${game.genre}</span>
+          <span class="gd-rank">#${rank} 热门排行</span>
+          <span class="gd-tag ${game.change}">${getChangeIcon(game.change)} ${game.changeText}</span>
+        </div>
+        <div class="gd-stats">
+          <div class="gd-stat">
+            <span class="gd-stat-value">${getEarnText(game)}</span>
+            <span class="gd-stat-label">时薪范围</span>
+          </div>
+          <div class="gd-stat">
+            <span class="gd-stat-value">${renderStars(game.difficulty)}</span>
+            <span class="gd-stat-label">${getDifficultyText(game.difficulty)}</span>
+          </div>
+          <div class="gd-stat">
+            <span class="gd-stat-value">${game.tags.slice(0, 3).join(' · ')}</span>
+            <span class="gd-stat-label">标签</span>
+          </div>
+          <div class="gd-stat">
+            <span class="gd-stat-value">${game.verified}</span>
+            <span class="gd-stat-label">数据验证</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gd-content">
+      <div class="gd-description">
+        <h2>游戏简介</h2>
+        <p>${game.detail}</p>
+      </div>
+      <div class="gd-guides">
+        <h2>${game.name} 搬砖攻略 <span class="gd-guides-count">(${guides.length}篇)</span></h2>
+        ${guides.length > 0 ? `
+        <div class="gd-guides-list">
+          ${guides.map(g => `
+            <a href="guides/${g.id}.html" class="gd-guide-item" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${g.id}'}">
+              <div class="gd-guide-title">${g.title}</div>
+              <div class="gd-guide-meta">${g.date} · ${g.readTime} · 👁 ${g.views}</div>
+            </a>
+          `).join('')}
+        </div>
+        ` : `<div class="empty-state"><div class="empty-state-icon">📝</div><div class="empty-state-text">暂无该游戏的搬砖攻略，敬请期待</div></div>`}
+      </div>
+      ${related.length > 0 ? `
+      <div class="gd-related">
+        <h2>同类游戏推荐</h2>
+        <div class="gd-related-grid">
+          ${related.map(g => `
+            <div class="game-card" onclick="location.hash='#game/${g.name}'">
+              <span class="game-card-icon">${g.icon}</span>
+              <div class="game-card-name">${g.name}</div>
+              <div class="game-card-genre">${g.genre}</div>
+              <div class="game-card-earnings">${getEarnText(g)} <span>/时</span></div>
+              <div class="game-card-stars">${renderStars(g.difficulty)}</div>
+              <div class="game-card-data">数据验证于 ${g.verified}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      ` : ''}
+      <a href="#games" class="btn btn-outline" data-nav>← 返回游戏列表</a>
+    </div>
+  `;
 }
 
 // ---- Game Grid ----
@@ -1225,8 +1304,40 @@ function animateCounters() {
 function setupSearch() {
   const input = document.getElementById('searchInput');
   const btn = document.getElementById('searchBtn');
+  const box = document.getElementById('searchBox');
 
-  const doSearch = () => {
+  const dropdown = document.createElement('div');
+  dropdown.className = 'search-dropdown';
+  dropdown.style.display = 'none';
+  box.appendChild(dropdown);
+
+  const doSearch = (q) => {
+    if (!q) { dropdown.style.display = 'none'; return; }
+    const lower = q.toLowerCase();
+    const games = GAMES.filter(g => g.name.toLowerCase().includes(lower)).slice(0, 3);
+    const guides = GUIDES.filter(g =>
+      g.title.toLowerCase().includes(lower) ||
+      g.game.toLowerCase().includes(lower) ||
+      g.desc.toLowerCase().includes(lower)
+    ).slice(0, 5);
+    const total = games.length + guides.length;
+    if (total === 0) { dropdown.style.display = 'none'; return; }
+
+    dropdown.innerHTML =
+      (games.length ? `<div class="search-dropdown-group"><div class="search-dropdown-label">🎮 游戏</div>${games.map(g => `<div class="search-dropdown-item" data-hash="#game/${g.name}">${g.icon} ${g.name} <span class="sd-sub">${g.genre}</span></div>`).join('')}</div>` : '') +
+      (guides.length ? `<div class="search-dropdown-group"><div class="search-dropdown-label">📄 攻略</div>${guides.map(g => `<div class="search-dropdown-item" data-hash="#guide/${g.id}">${g.title} <span class="sd-sub">${g.game}</span></div>`).join('')}</div>` : '');
+    dropdown.style.display = 'block';
+
+    dropdown.querySelectorAll('.search-dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+        location.hash = item.dataset.hash;
+        dropdown.style.display = 'none';
+        input.value = item.textContent.trim().split(' ').slice(0, 2).join(' ');
+      });
+    });
+  };
+
+  const doSearchSubmit = () => {
     const q = input.value.trim().toLowerCase();
     if (!q) return;
     const foundGame = GAMES.find(g => g.name.toLowerCase().includes(q));
@@ -1238,10 +1349,14 @@ function setupSearch() {
     } else {
       location.hash = '#guides';
     }
+    dropdown.style.display = 'none';
   };
 
-  btn.addEventListener('click', doSearch);
-  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') doSearch(); });
+  input.addEventListener('input', () => doSearch(input.value.trim()));
+  input.addEventListener('focus', () => { if (input.value.trim()) doSearch(input.value.trim()); });
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { doSearchSubmit(); } });
+  document.addEventListener('click', (e) => { if (!box.contains(e.target)) dropdown.style.display = 'none'; });
+  btn.addEventListener('click', doSearchSubmit);
 }
 
 // ======================== TAB FILTER (Home) ========================
