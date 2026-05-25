@@ -1620,6 +1620,43 @@ ul { list-style: none; }
 }
 
 /* ============================================
+   Newbie Zone
+   ============================================ */
+.nz-hero {
+  text-align: center; padding: 48px 0 32px;
+  border-bottom: 1px solid var(--border); margin-bottom: 32px;
+}
+.nz-hero-icon { font-size: 64px; margin-bottom: 12px; }
+.nz-hero h1 { font-size: 36px; font-weight: 900; margin-bottom: 8px; }
+.nz-hero p { color: var(--text-muted); font-size: 15px; }
+.nz-section { margin-bottom: 40px; max-width: 800px; }
+.nz-section h2 { font-size: 22px; font-weight: 800; color: var(--gold); margin-bottom: 16px; }
+.nz-subtitle { color: var(--text-muted); font-size: 14px; margin-top: -12px; margin-bottom: 16px; }
+.nz-steps { display: flex; flex-direction: column; gap: 16px; }
+.nz-step { display: flex; gap: 16px; align-items: flex-start; }
+.nz-step-num {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gold); color: #0a0a0f; font-weight: 900;
+  display: flex; align-items: center; justify-content: center; font-size: 16px;
+}
+.nz-step-title { font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.nz-step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.nz-faqs { display: flex; flex-direction: column; gap: 8px; }
+.nz-faq {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); overflow: hidden;
+}
+.nz-faq-q {
+  padding: 14px 18px; cursor: pointer; font-weight: 600; color: var(--text-primary);
+  font-size: 14px; user-select: none;
+}
+.nz-faq-q::-webkit-details-marker { color: var(--gold); }
+.nz-faq-a {
+  padding: 0 18px 14px; font-size: 14px; color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================
    Search Dropdown
    ============================================ */
 .search-box { position: relative; }
@@ -1683,6 +1720,8 @@ ul { list-style: none; }
 .gd-guide-item:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
 .gd-guide-title { color: var(--text-primary); font-weight: 600; font-size: 15px; margin-bottom: 4px; }
 .gd-guide-meta { color: var(--text-muted); font-size: 12px; }
+.gd-section h2 { font-size: 20px; font-weight: 800; color: var(--gold); margin-bottom: 12px; }
+.gd-section p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
 .gd-related h2 { font-size: 20px; font-weight: 800; color: var(--gold); margin-bottom: 16px; }
 .gd-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
 

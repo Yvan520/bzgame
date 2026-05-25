@@ -757,15 +757,65 @@ const GUIDES = [
       { type: 'p', text: '卡片交易是DNF最经典的倒卖玩法。关注拍卖行卡片价格波动，版本更新前后价格差异最大。巴卡尔攻坚产出的传说卡片（如吐息火焰者）单价500-2000万，低收高卖利润可观。增幅装备倒卖需要关注版本风向——热门职业的增幅装备溢价高。注意走拍卖行交易，不要私下交易金币。金币比例1:65时收益最高。' },
     ]
   },
+  {
+    id: 'top10-2026', game: '综合', title: '2026年十大搬砖游戏排行：收益+门槛+稳定性全面对比',
+    desc: '2026年哪些游戏搬砖最赚钱？本文从时薪收益、门槛难度、稳定性、封号风险四个维度，对热门搬砖游戏进行全面对比评测。',
+    image: null, date: '2026-05-20', readTime: '15 分钟', views: '10.2k',
+    content: [
+      { type: 'p', text: '2026年游戏搬砖格局有了明显变化——传统端游依然稳，但新游和手游的崛起带来了更多选择。本文从时薪收益、上手门槛、稳定性、封号风险四个核心维度，对当前最热门的搬砖游戏进行全面排名。' },
+      { type: 'table', data: { headers: ['排名', '游戏', '时薪', '门槛', '稳定性', '封号风险', '总分'], rows: [
+        ['🥇 1', '三角洲行动', '35-60元', '⭐⭐⭐', '⭐⭐⭐⭐', '低', '⭐⭐⭐⭐⭐'],
+        ['🥇 2', '梦幻西游', '22-38元', '⭐⭐', '⭐⭐⭐⭐⭐', '极低', '⭐⭐⭐⭐⭐'],
+        ['🥇 3', '逆水寒手游', '28-45元', '⭐⭐⭐', '⭐⭐⭐⭐', '低', '⭐⭐⭐⭐'],
+        ['4', '六道OL', '22-38元', '⭐', '⭐⭐⭐', '低', '⭐⭐⭐⭐'],
+        ['5', 'DNF', '18-32元', '⭐⭐⭐', '⭐⭐⭐⭐', '中', '⭐⭐⭐⭐'],
+        ['6', '魔兽世界怀旧服', '20-35元', '⭐⭐⭐', '⭐⭐⭐⭐', '中', '⭐⭐⭐'],
+        ['7', '流放之路2', '25-40元', '⭐⭐⭐⭐', '⭐⭐', '低', '⭐⭐⭐'],
+        ['8', '魔力宝贝复兴', '18-30元', '⭐⭐', '⭐⭐⭐', '极低', '⭐⭐⭐'],
+        ['9', 'EVE Online', '25-50元', '⭐⭐⭐⭐⭐', '⭐⭐⭐⭐', '低', '⭐⭐⭐'],
+        ['10', '原神/星穹铁道', '12-25元', '⭐⭐', '⭐⭐⭐', '低', '⭐⭐⭐']]
+      } },
+      { type: 'p', text: '三角洲行动凭借35-60元的高时薪登顶榜首，但需要一定的FPS操作基础。梦幻西游胜在经济系统最成熟、封号风险最低、收益稳定——是新手入门的首选。逆水寒手游在新赛季的收益提升明显，综合表现优秀。六道OL作为2026年新游，零门槛入门的优势让它成为散人搬砖的首选。' },
+      { type: 'h2', text: '新手怎么选？' },
+      { type: 'table', data: { headers: ['你的情况', '推荐游戏', '理由'], rows: [
+        ['零基础、想安全起步', '梦幻西游', '系统最成熟、封号风险最低、教程最多'],
+        ['有FPS基础、想高收益', '三角洲行动', '时薪最高、上手快、操作爽'],
+        ['时间碎片化、手机搬', '六道OL / 逆水寒', '手机也能搬、日常耗时短'],
+        ['有MMO经验、想稳定', '魔兽世界怀旧服', '经济稳定、GKP体系成熟'],
+        ['挂机为主、不想操作', '天龙八部 / 阿尔比恩', '挂机收益、自由交易'],
+        ['技术好、想冲赛季', '流放之路2 / DNF', '赛季初收益爆炸']
+      ]} }
+    ]
+  },
+  {
+    id: 'newbie-choice', game: '综合', title: '新手选游戏指南：5款零门槛搬砖游戏实测对比',
+    desc: '新手搬砖最怕选错游戏白费功夫。本文实测对比5款真正零门槛的搬砖游戏，从收益到操作难度全方位分析，帮你找到最适合入门的游戏。',
+    image: null, date: '2026-05-20', readTime: '12 分钟', views: '6.8k',
+    content: [
+      { type: 'p', text: '新手搬砖最大的坑不是不会搬，而是选错了游戏。一款门槛过高的游戏会让你在入门期就放弃。本文精选5款真正零门槛、实测收益靠谱的搬砖游戏，帮你低风险起步。' },
+      { type: 'table', data: { headers: ['游戏', '启动成本', '首日收益', '上手时间', '推荐指数', '适合人群'], rows: [
+        ['梦幻西游（师门）', '账号30元', '15-25元', '30分钟', '⭐⭐⭐⭐⭐', '完全零基础'],
+        ['六道OL', '零成本', '10-20元', '20分钟', '⭐⭐⭐⭐⭐', '手机党/散人'],
+        ['魔力宝贝复兴', '零成本', '10-15元', '20分钟', '⭐⭐⭐⭐', '宠物爱好者'],
+        ['逆水寒手游（日常）', '账号30元', '15-25元', '30分钟', '⭐⭐⭐⭐', 'MMO新手'],
+        ['三角洲行动（跑刀）', '零成本', '6-12元/局', '15分钟', '⭐⭐⭐⭐', 'FPS新手']]
+      } },
+      { type: 'p', text: '实测结论：梦幻西游的师门任务是最适合纯新手的搬砖方式——操作简单、收益稳定、安全无忧。如果不想下载电脑游戏，六道OL的零门槛和手机支持是最佳选择。三角洲行动虽然收益最高，但需要一定的FPS底子，上手后收益增长很快。' },
+      { type: 'h2', text: '新手五步上手法' },
+      { type: 'p', text: '第一步：在本站选择一款推荐游戏，阅读对应攻略。第二步：创建账号并完成新手教程，熟悉基础操作。第三步：按攻略方案开始搬砖，记录每日收益和耗时。第四步：稳定后优化效率——减少无效操作、增加多开、提高出金频率。第五步：收益稳定后尝试拓展到第二款游戏，多元化收入来源。记住：前三天是适应期，收益低是正常的，坚持一周会有明显提升。' },
+      { type: 'h2', text: '避坑指南' },
+      { type: 'p', text: '新手最容易犯的五个错误：第一，一上来就多开——先单号熟悉流程，稳定了再加号。第二，盲目冲高收益游戏——门槛高就意味着你的效率低，反而不如新手友好游戏。第三，不走官方出金渠道——私下交易被骗率极高。第四，不做收益记录——不记录就不知道什么路线最赚。第五，不懂止损——投入超过预期就停下来重新评估。' },
+    ]
+  },
 ];
 
 const PLATFORMS = [
-  { id: 'dd373', name: 'DD373', desc: '老牌游戏交易平台，支持多款游戏金币/账号交易，安全快捷', icon: 'D', color: '#e74c3c', features: ['多游戏支持', '安全担保交易', '客服响应快'], rating: 4.5 },
-  { id: '5173', name: '5173', desc: '国内最大游戏交易平台，覆盖主流游戏，手续费低至2%', icon: '5', color: '#3498db', features: ['用户量大', '手续费低', '提现快'], rating: 4.3 },
-  { id: 'g2g', name: 'G2G', desc: '全球化游戏交易市场，支持多币种结算，适合国际玩家', icon: 'G', color: '#2ecc71', features: ['国际化平台', '多币种结算', '买家群体大'], rating: 4.2 },
-  { id: 'c5game', name: 'C5Game', desc: '专业游戏饰品交易平台，支持 Steam 游戏道具交易', icon: 'C', color: '#9b59b6', features: ['饰品交易', 'Steam 对接', '实时报价'], rating: 4.0 },
-  { id: 'igxe', name: 'IGXE', desc: '全球游戏饰品交易平台，支持多种电竞游戏道具交易', icon: 'I', color: '#f39c12', features: ['电竞游戏', '库存大', '交易速度快'], rating: 4.1 },
-  { id: 'buff', name: 'BUFF', desc: '网易旗下游戏交易平台，支持逆水寒、梦幻西游等网易游戏', icon: 'B', color: '#1abc9c', features: ['网易官方', '安全可靠', '到账快'], rating: 4.4 },
+  { id: 'dd373', name: 'DD373', desc: '老牌游戏交易平台，支持多款游戏金币/账号交易，安全快捷', icon: 'D', color: '#e74c3c', features: ['多游戏支持', '安全担保交易', '客服响应快'], rating: 4.5, detail: 'DD373成立于2012年，是国内最早的游戏交易平台之一，累计服务用户超5000万。平台支持金币、账号、代练、道具等多种交易类型，覆盖梦幻西游、DNF、逆水寒等主流搬砖游戏。交易走担保模式——买家付款后平台冻结资金，确认收货后放款给卖家。手续费3-8%，提现到账速度较快（1-24小时）。' },
+  { id: '5173', name: '5173', desc: '国内最大游戏交易平台，覆盖主流游戏，手续费低至2%', icon: '5', color: '#3498db', features: ['用户量大', '手续费低', '提现快'], rating: 4.3, detail: '5173是国内规模最大的游戏交易平台，运营超过18年。支持游戏币、账号、装备、代练等全品类交易。最大优势是用户基数大——热门游戏的交易单量大，流动性好。手续费2-5%是行业较低水平。支持支付宝、微信、银行卡等多种提现方式。客服7×24小时在线，纠纷处理相对规范。' },
+  { id: 'g2g', name: 'G2G', desc: '全球化游戏交易市场，支持多币种结算，适合国际玩家', icon: 'G', color: '#2ecc71', features: ['国际化平台', '多币种结算', '买家群体大'], rating: 4.2, detail: 'G2G是面向全球玩家的游戏交易平台，特别适合做国际游戏搬砖（如OSRS、WoW Token、Albion Online等）。全英文界面，支持美元、欧元、英镑等多币种结算。PayPal和信用卡提现。对于做外服搬砖的玩家来说，G2G是最主流的选择。平台抽成6-10%，略高于国内平台，但海外买家购买力强，单价更高。' },
+  { id: 'c5game', name: 'C5Game', desc: '专业游戏饰品交易平台，支持 Steam 游戏道具交易', icon: 'C', color: '#9b59b6', features: ['饰品交易', 'Steam 对接', '实时报价'], rating: 4.0, detail: 'C5Game专注游戏饰品/道具交易，深度对接Steam生态系统。支持CS2、Dota 2、Rust等Steam游戏的饰品交易。亮点是实时报价系统和自动发货——买家付款后饰品自动发送到Steam库存，卖家无需手动操作。手续费约5%。缺点是主要面向饰品交易，金币/账号类交易支持有限。' },
+  { id: 'igxe', name: 'IGXE', desc: '全球游戏饰品交易平台，支持多种电竞游戏道具交易', icon: 'I', color: '#f39c12', features: ['电竞游戏', '库存大', '交易速度快'], rating: 4.1, detail: 'IGXE是国内老牌饰品交易平台，支持CS2、Dota 2、PUBG、Rust等游戏的道具/饰品交易。库存量在业内名列前茅，热门饰品流动性好。特色功能包括：批量挂单、自动发货、价格提醒等。手续费4-7%。支持Steam机器人自动发货，24小时自助交易。对国际卖家也有很好的支持。' },
+  { id: 'buff', name: 'BUFF', desc: '网易旗下游戏交易平台，支持逆水寒、梦幻西游等网易游戏', icon: 'B', color: '#1abc9c', features: ['网易官方', '安全可靠', '到账快'], rating: 4.4, detail: 'BUFF是网易旗下官方交易平台（藏宝阁的升级版），支持逆水寒、梦幻西游、大话西游、一梦江湖、倩女幽魂等网易系游戏。最大优势是官方背景——交易走网易内部系统，资金安全零风险，不用担心封号。手续费5%左右。提现到支付宝/银行卡通常24小时内到账。对于做网易游戏搬砖的玩家来说，BUFF是最推荐的出金渠道。' },
 ];
 
 // ======================== APP STATE ========================
@@ -774,6 +824,7 @@ const state = {
   currentPage: 'home',
   currentGuide: null,
   currentGame: null,
+  currentPlatform: null,
   calcGameIndex: 0,
   calcHours: 4,
   guideFilter: 'all',
@@ -793,7 +844,7 @@ const gameTheme = {
   '一梦江湖': '#448aff','完美世界手游': '#69f0ae','诛仙手游': '#e040fb',
   '王者荣耀': '#e91e63','和平精英': '#ff5722','英雄联盟手游': '#2979ff',
   '三国志·战略版': '#f9a825','率土之滨': '#6d4c41','崩坏3': '#d500f9',
-  '最终幻想14': '#00bfa5','幻塔': '#aa00ff',
+  '最终幻想14': '#00bfa5','幻塔': '#aa00ff','综合': '#6c757d',
 };
 const gameColors = Object.values(gameTheme).filter((v,i,a)=>a.indexOf(v)===i);
 
@@ -814,6 +865,17 @@ function navigate(hash) {
     }
   }
 
+  if (cleanHash.startsWith('platform/')) {
+    const platformId = cleanHash.replace('platform/', '');
+    const platform = PLATFORMS.find(p => p.id === platformId);
+    if (platform) {
+      state.currentPlatform = platform;
+      switchPage('platform-detail');
+      renderPlatformDetail(platform);
+      return;
+    }
+  }
+
   if (cleanHash.startsWith('game/')) {
     const gameName = cleanHash.replace('game/', '');
     const game = GAMES.find(g => g.name === gameName);
@@ -825,7 +887,7 @@ function navigate(hash) {
     }
   }
 
-  const validPages = ['home', 'rankings', 'games', 'guides', 'platforms', 'about'];
+  const validPages = ['home', 'rankings', 'games', 'guides', 'newbie', 'platforms', 'about'];
   const page = validPages.includes(cleanHash) ? cleanHash : 'home';
   state.currentPage = page;
   switchPage(page);
@@ -1014,7 +1076,7 @@ function renderGuideGrid(filter) {
 
   el.innerHTML = filtered.map(guide => {
     const bgColor = gameTheme[guide.game] || '#e74c3c';
-    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv'].includes(guide.id);
+    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
     <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
@@ -1091,7 +1153,7 @@ function updateCalcResult() {
 function renderPlatforms() {
   const el = document.getElementById('platformList');
   el.innerHTML = PLATFORMS.slice(0, 3).map(p => `
-    <div class="platform-item">
+    <div class="platform-item" onclick="location.hash='#platform/${p.id}'">
       <div class="platform-item-left">
         <div class="platform-icon" style="background: ${p.color};">${p.icon}</div>
         <div>
@@ -1099,14 +1161,14 @@ function renderPlatforms() {
           <div class="platform-desc">${p.desc}</div>
         </div>
       </div>
-      <button class="platform-btn" onclick="alert('即将跳转到 ${p.name} 交易平台')">前往出金</button>
+      <button class="platform-btn" onclick="event.stopPropagation();location.hash='#platform/${p.id}'">查看详情</button>
     </div>
   `).join('');
 
   const grid = document.getElementById('platformsGrid');
   if (grid) {
     grid.innerHTML = PLATFORMS.map(p => `
-      <div class="platform-card">
+      <div class="platform-card" onclick="location.hash='#platform/${p.id}'">
         <div class="platform-card-header">
           <div class="platform-card-icon" style="background: ${p.color};">${p.icon}</div>
           <div>
@@ -1118,10 +1180,82 @@ function renderPlatforms() {
         <div class="platform-card-features">
           ${p.features.map(f => `<span class="platform-card-feature"><span class="check">✓</span> ${f}</span>`).join('')}
         </div>
-        <button class="platform-btn" onclick="alert('即将跳转到 ${p.name} 交易平台')">前往出金</button>
+        <button class="platform-btn" onclick="event.stopPropagation();location.hash='#platform/${p.id}'">查看详情</button>
       </div>
     `).join('');
   }
+}
+
+// ---- Platform Detail ----
+function renderPlatformDetail(platform) {
+  const el = document.getElementById('platformDetail');
+  const allPlatforms = PLATFORMS.filter(p => p.id !== platform.id);
+  el.innerHTML = `
+    <div class="game-detail-hero">
+      <div class="gd-icon" style="font-size:56px;width:80px;height:80px;display:flex;align-items:center;justify-content:center;background:${platform.color};border-radius:16px;color:#fff;font-weight:900;">${platform.icon}</div>
+      <div class="gd-info">
+        <h1>${platform.name} 交易平台评测</h1>
+        <div class="gd-meta">
+          <span class="gd-genre">游戏交易平台</span>
+          <span class="gd-rank">⭐ ${platform.rating}/5.0</span>
+          <span class="gd-tag stable">${platform.features[0]}</span>
+        </div>
+        <div class="gd-stats" style="grid-template-columns:repeat(3,1fr)">
+          <div class="gd-stat">
+            <span class="gd-stat-value">${platform.features.length} 项</span>
+            <span class="gd-stat-label">核心功能</span>
+          </div>
+          <div class="gd-stat">
+            <span class="gd-stat-value" style="color:${platform.color}">${platform.rating}/5</span>
+            <span class="gd-stat-label">用户评分</span>
+          </div>
+          <div class="gd-stat">
+            <span class="gd-stat-value">${platform.features.slice(0,2).join(' · ')}</span>
+            <span class="gd-stat-label">特色标签</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gd-content">
+      <div class="gd-description">
+        <h2>平台简介</h2>
+        <p>${platform.detail}</p>
+      </div>
+
+      <div class="gd-section">
+        <h2>核心功能一览</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+          ${platform.features.map(f => `<span style="padding:6px 14px;background:var(--bg-surface);border:1px solid var(--border);border-radius:20px;color:var(--text-secondary);font-size:13px;">✓ ${f}</span>`).join('')}
+        </div>
+      </div>
+
+      <div class="gd-section">
+        <h2>平台横向对比</h2>
+        <table>
+          <thead><tr><th>平台</th><th>评分</th><th>核心优势</th><th>适合游戏</th></tr></thead>
+          <tbody>
+            ${PLATFORMS.map(p => `
+              <tr onclick="location.hash='#platform/${p.id}'" style="cursor:pointer">
+                <td><strong>${p.icon} ${p.name}</strong></td>
+                <td>⭐ ${p.rating}</td>
+                <td>${p.features.slice(0,2).join(' · ')}</td>
+                <td>${p.id === 'dd373' ? '梦幻/DNF/逆水寒' : p.id === '5173' ? '梦幻/DNF/WoW' : p.id === 'g2g' ? 'OSRS/WoW/Albion' : p.id === 'c5game' ? 'CS2/Dota2' : p.id === 'igxe' ? 'CS2/Dota2/PUBG' : '逆水寒/梦幻/大话'}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+        <div style="margin-top:12px;font-size:12px;color:var(--text-muted)">💡 点击表格行查看平台详情</div>
+      </div>
+
+      <div class="gd-section">
+        <h2>搬砖出金建议</h2>
+        <p>选平台的核心原则：<strong>安全第一、费率第二、到账速度第三</strong>。网易游戏首选BUFF，腾讯游戏考虑5173/DD373，国际游戏选G2G。不要把所有鸡蛋放一个篮子——建议2-3个平台分摊风险。大额交易走担保交易，小额走快速出金。提现前确认平台的最新费率和限额政策。</p>
+      </div>
+
+      <a href="#platforms" class="btn btn-outline" data-nav>← 返回交易平台列表</a>
+    </div>
+  `;
 }
 
 // ---- Guide Detail ----
@@ -1248,7 +1382,7 @@ function renderGuidesPage(filtered, activeFilter) {
 
   el.innerHTML = items.map(guide => {
     const bgColor = gameTheme[guide.game] || '#e74c3c';
-    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv'].includes(guide.id);
+    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
     <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
@@ -1505,6 +1639,107 @@ function setupHeaderSearchVisibility() {
 
 // ======================== INIT ========================
 
+// ---- Newbie Zone ----
+const newbieFaqs = [
+  { q: '什么是游戏搬砖？', a: '游戏搬砖就是通过重复的游戏行为（打副本、采集材料、做日常等）获取游戏内的虚拟货币或道具，再通过正规交易平台出售变现。说白了就是"打游戏赚钱"。' },
+  { q: '需要多少启动资金？', a: '大部分赚钱的游戏都需要一定门槛投入，一般来说2000-5000元是比较实际的起步预算，用于购买基础设备、游戏账号或角色配置。部分零门槛游戏（如六道OL、魔力宝贝复兴）可以零成本起步。' },
+  { q: '每天需要花多少时间？', a: '新手建议每天投入2-4小时。入门期的核心是熟悉游戏机制和经济系统，这个阶段效率低是正常的。稳定后日均2小时月入1500-3000元，4小时月入3000-6000元。' },
+  { q: '搬砖会被封号吗？', a: '会，如果操作不当。核心原则：不使用第三方脚本，不走可疑的私下交易，控制单日产出量，多开号用不同IP。选择官方交易平台（藏宝阁、BUFF等）出金，安全系数最高。' },
+  { q: '哪个游戏最赚钱？', a: '没有"最赚钱"的游戏，只有最适合你的游戏。新手推荐：梦幻西游（系统最成熟）、六道OL（零门槛）、三角洲行动（收益高，但吃操作）。先试玩1-2天，觉得适合再深入。' },
+  { q: '收益能稳定达到月入过万吗？', a: '达到月入过万需要一定的积累——熟悉游戏机制、掌握效率技巧、多开账号运营。大多数搬砖玩家月入3000-8000元。月入过万需要全职投入+多开，相当于一份正常工作的收入。' },
+];
+
+function renderNewbieZone() {
+  const el = document.getElementById('newbieZone');
+  const newbieGuides = GUIDES.filter(g => g.title.includes('新手') || g.title.includes('入坑') || g.title.includes('新手上路') || g.title.includes('入门') || g.game === '综合');
+  const easyGames = GAMES.filter(g => g.difficulty <= 2).slice(0, 6);
+
+  el.innerHTML = `
+    <div class="nz-hero">
+      <div class="nz-hero-icon">🌱</div>
+      <h1>新手村</h1>
+      <p>从零开始的搬砖指南 — 适合完全没接触过游戏搬砖的新手</p>
+    </div>
+
+    <div class="nz-section">
+      <h2>📋 快速入门三步走</h2>
+      <div class="nz-steps">
+        <div class="nz-step">
+          <div class="nz-step-num">1</div>
+          <div class="nz-step-body">
+            <div class="nz-step-title">选游戏</div>
+            <div class="nz-step-desc">选择一款适合新手的搬砖游戏。优先考虑门槛低、经济系统成熟的游戏。下面的「新手推荐游戏」可以帮你快速筛选。</div>
+          </div>
+        </div>
+        <div class="nz-step">
+          <div class="nz-step-num">2</div>
+          <div class="nz-step-body">
+            <div class="nz-step-title">学攻略</div>
+            <div class="nz-step-desc">阅读对应游戏的新手攻略，了解怎么赚钱、效率最高的路线是什么、有哪些坑要避开。本站所有攻略均为实测数据。</div>
+          </div>
+        </div>
+        <div class="nz-step">
+          <div class="nz-step-num">3</div>
+          <div class="nz-step-body">
+            <div class="nz-step-title">开始搬砖</div>
+            <div class="nz-step-desc">按攻略方案上手实操。先用小号测试，熟悉流程后逐步加大投入。选择官方/正规交易平台出金，安全第一。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nz-section">
+      <h2>🎮 新手推荐游戏</h2>
+      <p class="nz-subtitle">以下游戏门槛低（★★☆☆☆及以下），适合新手起步</p>
+      <div class="game-grid" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr))">
+        ${easyGames.map(g => `
+          <div class="game-card" onclick="location.hash='#game/${g.name}'">
+            <span class="game-card-icon">${g.icon}</span>
+            <div class="game-card-name">${g.name}</div>
+            <div class="game-card-genre">${g.genre}</div>
+            <div class="game-card-earnings">¥${g.earnMin}-${g.earnMax} <span>/时</span></div>
+            <div class="game-card-stars">${renderStars(g.difficulty)}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <div class="nz-section">
+      <h2>📖 新手必读攻略</h2>
+      <div class="gd-guides-list">
+        ${newbieGuides.map(g => `
+          <a href="guides/${g.id}.html" class="gd-guide-item" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${g.id}'}">
+            <div class="gd-guide-title">${g.title}</div>
+            <div class="gd-guide-meta">${g.game} · ${g.date} · ${g.readTime}</div>
+          </a>
+        `).join('')}
+      </div>
+    </div>
+
+    <div class="nz-section">
+      <h2>❓ 常见问题</h2>
+      <div class="nz-faqs">
+        ${newbieFaqs.map(f => `
+          <details class="nz-faq">
+            <summary class="nz-faq-q">${f.q}</summary>
+            <div class="nz-faq-a">${f.a}</div>
+          </details>
+        `).join('')}
+      </div>
+    </div>
+
+    <div class="nz-section">
+      <h2>🔗 推荐交易平台</h2>
+      <p class="nz-subtitle">安全出金是搬砖的最后一步，选择正规平台</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        ${PLATFORMS.map(p => `
+          <span class="platform-card-feature" style="cursor:pointer;padding:8px 16px;background:var(--bg-surface);border:1px solid var(--border);border-radius:20px;color:var(--text-secondary);font-size:13px" onclick="location.hash='#platform/${p.id}'">${p.icon} ${p.name} ⭐${p.rating}</span>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
 function initApp() {
   renderRankingsPreview();
   renderGameGrid();
@@ -1514,6 +1749,7 @@ function initApp() {
   renderRankingsFull();
   renderGamesFull();
   renderGuidesPage(GUIDES, 'all');
+  renderNewbieZone();
   animateCounters();
   setupSearch();
   setupHomeTabs();
