@@ -1076,7 +1076,7 @@ function renderGuideGrid(filter) {
 
   el.innerHTML = filtered.map(guide => {
     const bgColor = gameTheme[guide.game] || '#e74c3c';
-    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice'].includes(guide.id);
+    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
     <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
@@ -1382,7 +1382,7 @@ function renderGuidesPage(filtered, activeFilter) {
 
   el.innerHTML = items.map(guide => {
     const bgColor = gameTheme[guide.game] || '#e74c3c';
-    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice'].includes(guide.id);
+    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
     <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
