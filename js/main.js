@@ -409,6 +409,8 @@ const gameColors = Object.values(gameTheme).filter((v,i,a)=>a.indexOf(v)===i);
 
 // ======================== ROUTER ========================
 
+function escapeHtml(t) { if (!t) return ''; return t.replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
 function navigate(hash) {
   const raw = hash.replace('#', '') || 'home';
   const cleanHash = (() => { try { return decodeURIComponent(raw); } catch { return raw; } })();
@@ -818,38 +820,69 @@ function renderPlatformDetail(platform) {
 }
 
 // ---- Guide Detail ----
+
+function renderTOC(content) {
+  if (!content) return '';
+  const h2s = content.filter(function(c) { return c.type === 'h2'; });
+  if (h2s.length < 2) return '';
+  var html = '<div class="toc"><div class="toc-title">\uD83D\uDCD6 目录导航</div><ul class="toc-list">';
+  var idx = 0;
+  content.forEach(function(c) {
+    if (c.type === 'h2') {
+      html += '<li><a href="#s' + idx + '">' + escapeHtml(c.text) + '</a></li>';
+      idx++;
+    }
+  });
+  html += '</ul></div>';
+  return html;
+}
+
+function escapeHtml(t) { if (!t) return ''; return t.replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function renderTOC(content) {
+  const h2s = content.filter(c => c.type === 'h2');
+  if (h2s.length < 2) return '';
+  let html = '<div class="toc"><div class="toc-title">📖 目录导航</div><ul class="toc-list">';
+  let idx = 0;
+  content.forEach(c => { if (c.type === 'h2') { html += '<li><a href="#s' + idx + '">' + escapeHtml(c.text) + '</a></li>'; idx++; } });
+  html += '</ul></div>';
+  return html;
+}
+
 function renderGuideDetail(guide) {
+  let idx = 0;
+  const contentHtml = (guide.content || []).map(block => {
+    if (block.type === 'h2') { const i = idx++; return '<h2 id="s' + i + '">' + block.text + '</h2>'; }
+    if (block.type === 'h3') return '<h3>' + block.text + '</h3>';
+    if (block.type === 'p') return '<p>' + block.text + '</p>';
+    if (block.type === 'table') {
+      const d = block.data;
+      return '<div class="table-wrap"><table class="data-table"><thead><tr>' + d.headers.map(h => '<th>' + h + '</th>').join('') + '</tr></thead><tbody>' + d.rows.map(r => '<tr>' + r.map(c => '<td>' + c + '</td>').join('') + '</tr>').join('') + '</tbody></table></div>';
+    }
+    return '';
+  }).join('');
+
+  const tocHtml = renderTOC(guide.content || []);
   const el = document.getElementById('guideDetail');
-  el.innerHTML = `
-    <div class="guide-detail-header">
-      <div class="guide-meta">
-        <span>📅 ${guide.date}</span>
-        <span>⏱ ${guide.readTime}</span>
-        <span>👁 ${guide.views} 阅读</span>
-        <span>🏷 ${guide.game}</span>
-      </div>
-      <h1>${guide.title}</h1>
-      <p class="guide-desc">${guide.desc}</p>
-    </div>
-    <div class="guide-detail-body">
-      ${guide.content.map(block => {
-        if (block.type === 'h2') return `<h2>${block.text}</h2>`;
-        if (block.type === 'h3') return `<h3>${block.text}</h3>`;
-        if (block.type === 'p') return `<p>${block.text}</p>`;
-        if (block.type === 'table') {
-          const d = block.data;
-          return `<table class="data-table">
-            <thead><tr>${d.headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>
-            <tbody>${d.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
-          </table>`;
-        }
-        return '';
-      }).join('')}
-    </div>
-    <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border);">
-      <a href="#guides" class="btn btn-outline" data-nav>← 返回攻略列表</a>
-    </div>
-  `;
+  el.innerHTML = '<div id="progress-bar"></div>' +
+    '<div class="guide-detail-header">' +
+      '<div class="guide-meta">' +
+        '<span>\uD83D\uDCC5 ' + guide.date + '</span>' +
+        '<span>\u23F1 ' + guide.readTime + '</span>' +
+        '<span>\uD83D\uDC41 ' + guide.views + ' 阅读</span>' +
+        '<span>\uD83C\uDFF7 ' + guide.game + '</span>' +
+      '</div>' +
+      '<h1>' + guide.title + '</h1>' +
+      '<p class="guide-desc">' + guide.desc + '</p>' +
+    '</div>' +
+    '<div class="guide-img">\uD83C\uDFAE</div>' +
+    tocHtml +
+    '<div class="guide-detail-body">' + contentHtml + '</div>' +
+    '<button id="back-top" onclick="window.scrollTo({top:0,behavior:\'smooth\'})">\u2191</button>' +
+    '<script>window.addEventListener(\'scroll\',function(){var p=document.getElementById(\'progress-bar\');var t=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;if(p)p.style.width=Math.min(t/h*100,100)+\'%\';var bt=document.getElementById(\'back-top\');if(bt)bt.classList.toggle(\'show\',t>300);});<' + '/script>' +
+    '<div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border);">' +
+      '<a href="#guides" class="btn btn-outline" data-nav>\u2190 返回攻略列表</a>' +
+    '</div>';
 }
 
 // ---- Full Rankings ----
