@@ -422,6 +422,7 @@ function navigate(hash) {
       state.currentGuide = guide;
       switchPage('guide-detail');
       renderGuideDetail(guide);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
   }
@@ -433,6 +434,7 @@ function navigate(hash) {
       state.currentPlatform = platform;
       switchPage('platform-detail');
       renderPlatformDetail(platform);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
   }
@@ -444,6 +446,7 @@ function navigate(hash) {
       state.currentGame = game;
       switchPage('game-detail');
       renderGameDetail(game);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
   }
