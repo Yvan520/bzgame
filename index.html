@@ -957,27 +957,41 @@
         <p>海外用户可直接观看 · 无需跳转B站 · 电脑/手机/平板全设备支持</p>
       </div>
       <div class="section live-section">
+        <div class="live-tabs">
+          <button class="live-tab active" data-mode="bili">📺 B站嵌入（推荐）</button>
+          <button class="live-tab" data-mode="hls">🔧 HLS 代理（海外）</button>
+        </div>
         <div class="live-grid">
           <div class="live-main">
-            <div class="live-video-wrap">
-              <video id="liveVideo" controls playsinline webkit-playsinline preload="metadata"></video>
-              <div class="live-overlay" id="liveOverlay">
-                <div class="live-overlay-text">选择左侧直播间，点击 ▶ 开始播放</div>
+            <!-- B站 iframe 模式（默认） -->
+            <div class="live-bili-wrap" id="liveBiliWrap">
+              <iframe id="liveBiliFrame" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
+              <div class="live-overlay" id="liveBiliOverlay">
+                <div class="live-overlay-text">选择左侧直播间开始观看</div>
               </div>
             </div>
-            <div class="live-controls">
-              <button id="livePlayBtn" class="btn btn-primary">▶ 播放</button>
-              <button id="liveStopBtn" class="btn btn-outline">⏹ 停止</button>
-              <span class="live-status" id="liveStatus">就绪</span>
+            <!-- HLS 代理模式 -->
+            <div class="live-hls-wrap" id="liveHlsWrap" style="display:none">
+              <div class="live-video-wrap">
+                <video id="liveVideo" controls playsinline webkit-playsinline preload="metadata"></video>
+                <div class="live-overlay" id="liveOverlay">
+                  <div class="live-overlay-text">点击 ▶ 开始播放（HLS 模式）</div>
+                </div>
+              </div>
+              <div class="live-controls">
+                <button id="livePlayBtn" class="btn btn-primary">▶ 播放</button>
+                <button id="liveStopBtn" class="btn btn-outline">⏹ 停止</button>
+                <span class="live-status" id="liveStatus">就绪</span>
+              </div>
+              <div class="live-log" id="liveLog"></div>
             </div>
-            <div class="live-log" id="liveLog"></div>
           </div>
           <div class="live-sidebar">
             <h3>正在直播</h3>
             <div class="live-rooms" id="liveRooms"></div>
             <div class="live-note">
-              <p>📡 直播源：B站官方</p>
-              <p>🔧 代理：Cloudflare Workers（主） / Vercel（备）</p>
+              <p>📺 B站嵌入：B站官方播放器，弹幕/登录都可用</p>
+              <p>🔧 HLS 代理：海外无跳转方案（需 VPS 部署）</p>
               <p>📱 移动端横屏观看体验更佳</p>
             </div>
           </div>

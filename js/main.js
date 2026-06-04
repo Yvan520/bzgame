@@ -1418,7 +1418,7 @@ const LIVE_ROOMS = [
   { id: '25255343',   name: 'CS2 赛事 2',                 game: 'CS2' },
 ];
 
-// Proxy URLs
+// HLS Proxy URLs
 // PRIMARY: Cloudflare Worker (set after `wrangler deploy` in cf-worker/)
 // FALLBACK: Vercel
 const HLS_PRIMARY  = null;  // e.g. 'https://bilibili-hls-proxy.YOUR_SUBDOMAIN.workers.dev/hls'
@@ -1427,6 +1427,7 @@ const HLS_FALLBACK = 'https://bilibili-proxy-kappa.vercel.app/api/hls';
 let liveHls = null;
 let liveCurrentUrl = null;
 let liveCurrentRoom = null;
+let liveMode = 'bili';  // 'bili' (iframe) or 'hls' (proxy)
 
 function initLivePlayer() {
   const video = document.getElementById('liveVideo');
@@ -1436,15 +1437,22 @@ function initLivePlayer() {
   const logEl = document.getElementById('liveLog');
   const roomsEl = document.getElementById('liveRooms');
   const overlay = document.getElementById('liveOverlay');
+  const biliFrame = document.getElementById('liveBiliFrame');
+  const biliWrap = document.getElementById('liveBiliWrap');
+  const biliOverlay = document.getElementById('liveBiliOverlay');
+  const hlsWrap = document.getElementById('liveHlsWrap');
+  const tabs = document.querySelectorAll('.live-tab');
 
-  if (!video || !playBtn) return;
+  if (!roomsEl) return;
 
   function setStatus(text, level) {
+    if (!statusEl) return;
     statusEl.textContent = text;
     statusEl.className = 'live-status' + (level ? ' ' + level : '');
   }
 
   function log(msg, level) {
+    if (!logEl) return;
     level = level || 'info';
     const ts = new Date().toLocaleTimeString();
     const line = document.createElement('div');
@@ -1456,7 +1464,7 @@ function initLivePlayer() {
 
   function renderRooms() {
     roomsEl.innerHTML = '';
-    LIVE_ROOMS.forEach((room, i) => {
+    LIVE_ROOMS.forEach(function (room, i) {
       const btn = document.createElement('button');
       btn.className = 'live-room' + (i === 0 ? ' active' : '');
       btn.dataset.roomId = room.id;
@@ -1467,17 +1475,44 @@ function initLivePlayer() {
           '<div class="live-room-id">room: ' + room.id + ' · ' + room.game + '</div>' +
         '</div>' +
         '<span class="live-dot"></span>';
-      btn.addEventListener('click', () => selectRoom(room, btn));
+      btn.addEventListener('click', function () { selectRoom(room, btn); });
       roomsEl.appendChild(btn);
     });
   }
 
   function selectRoom(room, btnEl) {
-    document.querySelectorAll('.live-room').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.live-room').forEach(function (b) { b.classList.remove('active'); });
     btnEl.classList.add('active');
     liveCurrentRoom = room;
-    setStatus('已选择: ' + room.name);
-    log('Selected: ' + room.name + ' (roomId=' + room.id + ')', 'info');
+
+    if (liveMode === 'bili') {
+      loadBiliIframe(room.id);
+    } else {
+      setStatus('已选择: ' + room.name);
+      log('Selected: ' + room.name + ' (roomId=' + room.id + ')', 'info');
+    }
+  }
+
+  function loadBiliIframe(roomId) {
+    biliFrame.src = 'https://live.bilibili.com/' + roomId;
+    biliOverlay.classList.add('hidden');
+    log('Loading B站 iframe: roomId=' + roomId, 'info');
+  }
+
+  function switchMode(mode) {
+    liveMode = mode;
+    tabs.forEach(function (t) {
+      t.classList.toggle('active', t.dataset.mode === mode);
+    });
+    if (mode === 'bili') {
+      biliWrap.style.display = '';
+      hlsWrap.style.display = 'none';
+      if (liveCurrentRoom) loadBiliIframe(liveCurrentRoom.id);
+    } else {
+      biliWrap.style.display = 'none';
+      hlsWrap.style.display = '';
+      if (biliFrame) biliFrame.src = '';
+    }
   }
 
   function getBaseUrl() {
@@ -1500,7 +1535,6 @@ function initLivePlayer() {
     overlay.classList.add('hidden');
 
     // Pre-fetch m3u8 with explicit timeout (8s) so we get clear errors
-    // instead of HLS.js silently hanging
     const controller = new AbortController();
     const timeout = setTimeout(function () { controller.abort(); }, 8000);
 
@@ -1535,7 +1569,7 @@ function initLivePlayer() {
           return;
         }
 
-        // HLS.js — feed m3u8 text directly
+        // HLS.js
         if (!window.Hls || !Hls.isSupported()) {
           log('HLS.js not supported', 'error');
           setStatus('❌ 浏览器不支持 HLS', 'error');
@@ -1552,8 +1586,6 @@ function initLivePlayer() {
         });
 
         liveHls.attachMedia(video);
-        // Load source from text by creating a fake URL
-        // HLS.js 1.5+ supports loadSource with a string but we'll use a blob URL
         const blob = new Blob([m3u8Text], { type: 'application/vnd.apple.mpegurl' });
         const blobUrl = URL.createObjectURL(blob);
         liveHls.on(Hls.Events.MANIFEST_PARSED, function () {
@@ -1624,23 +1656,29 @@ function initLivePlayer() {
     log('Stopped', 'info');
   }
 
-  playBtn.addEventListener('click', function () {
-    if (!liveCurrentRoom) {
-      // Auto-select first room
-      liveCurrentRoom = LIVE_ROOMS[0];
-    }
-    loadStream(liveCurrentRoom.id);
+  // Tab switching
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      switchMode(tab.dataset.mode);
+    });
   });
 
-  stopBtn.addEventListener('click', stopStream);
+  if (playBtn) {
+    playBtn.addEventListener('click', function () {
+      if (!liveCurrentRoom) liveCurrentRoom = LIVE_ROOMS[0];
+      loadStream(liveCurrentRoom.id);
+    });
+  }
+  if (stopBtn) stopBtn.addEventListener('click', stopStream);
 
   renderRooms();
   liveCurrentRoom = LIVE_ROOMS[0];
-  log('Initialized. Click ▶ to play.', 'info');
+  // Auto-load first room in B站 iframe mode
+  loadBiliIframe(liveCurrentRoom.id);
+  log('Initialized', 'info');
   if (HLS_PRIMARY) {
-    log('Primary: ' + HLS_PRIMARY, 'info');
+    log('HLS primary: ' + HLS_PRIMARY, 'info');
   } else {
-    log('PRIMARY_URL not set — using Vercel only. Deploy Worker for better reliability.', 'warn');
+    log('HLS proxy unreliable from HK/Vercel. Try B站 embed tab.', 'warn');
   }
-  log('Fallback: ' + HLS_FALLBACK, 'info');
 }
