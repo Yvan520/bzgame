@@ -48,6 +48,7 @@
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YTPBD9KJRV"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -80,6 +81,7 @@
 
       <nav class="main-nav" id="mainNav">
         <a href="#home" class="nav-link active" data-nav>首页</a>
+        <a href="#live" class="nav-link" data-nav>直播</a>
         <a href="#rankings" class="nav-link" data-nav>排行榜</a>
         <a href="#games" class="nav-link" data-nav>游戏库</a>
         <a href="#guides" class="nav-link" data-nav>攻略</a>
@@ -113,6 +115,7 @@
       </div>
       <nav class="mobile-nav">
         <a href="#home" class="mobile-nav-link" data-nav>首页</a>
+        <a href="#live" class="mobile-nav-link" data-nav>直播</a>
         <a href="#rankings" class="mobile-nav-link" data-nav>排行榜</a>
         <a href="#games" class="mobile-nav-link" data-nav>游戏库</a>
         <a href="#guides" class="mobile-nav-link" data-nav>攻略</a>
@@ -943,6 +946,41 @@
             <li>警惕"代练""代搬砖"诈骗，不提前付款</li>
             <li>遵守游戏服务条款，合理控制搬砖规模</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PAGE: LIVE ===== -->
+    <section class="page" id="page-live">
+      <div class="page-hero-sm">
+        <h1>🎮 赛事直播</h1>
+        <p>海外用户可直接观看 · 无需跳转B站 · 电脑/手机/平板全设备支持</p>
+      </div>
+      <div class="section live-section">
+        <div class="live-grid">
+          <div class="live-main">
+            <div class="live-video-wrap">
+              <video id="liveVideo" controls playsinline preload="metadata" crossorigin="anonymous"></video>
+              <div class="live-overlay" id="liveOverlay">
+                <div class="live-overlay-text">选择左侧直播间，点击 ▶ 开始播放</div>
+              </div>
+            </div>
+            <div class="live-controls">
+              <button id="livePlayBtn" class="btn btn-primary">▶ 播放</button>
+              <button id="liveStopBtn" class="btn btn-outline">⏹ 停止</button>
+              <span class="live-status" id="liveStatus">就绪</span>
+            </div>
+            <div class="live-log" id="liveLog"></div>
+          </div>
+          <div class="live-sidebar">
+            <h3>正在直播</h3>
+            <div class="live-rooms" id="liveRooms"></div>
+            <div class="live-note">
+              <p>📡 直播源：B站官方</p>
+              <p>🔧 代理：Cloudflare Workers（主） / Vercel（备）</p>
+              <p>📱 移动端横屏观看体验更佳</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

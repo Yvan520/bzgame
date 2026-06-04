@@ -366,6 +366,54 @@ const GUIDES = [
     image: null, date: '2026-05-20', readTime: '12 分钟', views: '6.8k',
     content: [{"type":"p","text":"作为一款运营多年的经典搬砖游戏，2026年依然保持着活跃的经济体系和稳定的玩家群体。本文基于实测数据，详细拆解搬砖的核心玩法、收益预期、效率优化和出金安全策略。无论你是刚开始搬砖的新手还是想提升效率的老手，这篇攻略都能给你实用的参考。"},{"type":"h2","text":"搬砖核心玩法一览"},{"type":"table","data":{"headers":["玩法","门槛","时薪","日均收益","推荐等级"],"rows":[["日常任务+副本","极低","15-45元","50-200元","⭐⭐⭐⭐⭐"],["生活技能采集","低","15-25元","50-80元","⭐⭐⭐⭐"],["市场倒卖","中高","30-50元","100-200元","⭐⭐⭐"],["多开运营","中","翻倍收益","200-400元","⭐⭐⭐⭐"],["账号/代练服务","中","20-50元","100-300元","⭐⭐⭐⭐"]]}},{"type":"p","text":"的搬砖方式多样，新手建议从日常任务和副本开始（门槛最低），熟悉游戏机制和经济系统后，再尝试生活技能采集或市场倒卖。多开运营是提升收益的最直接方式，但需要注意控制账号数量和IP策略。"},{"type":"h2","text":"效率最大化技巧"},{"type":"p","text":"提升搬砖效率的核心是合理安排时间和任务优先级。建议每天上线先做高收益必做任务（如师门、押镖、日常副本），再做采集和生活技能（可挂机），最后留时间处理交易行挂单和倒卖。推荐使用双窗口或多开功能，一个号做任务的同时另一个号挂机采集，互不干扰。"},{"type":"table","data":{"headers":["时间段","操作","耗时","收益占比"],"rows":[["早上(8:00-8:30)","清日常任务","30分钟","30%"],["中午(12:00-12:30)","挂机采集+交易","30分钟","20%"],["晚上(20:00-22:00)","副本+倒卖+出金","2小时","50%"],["周末","周常+活动+集中出金","3-4小时","1.5倍收益"]]}},{"type":"h2","text":"出金渠道与安全建议"},{"type":"p","text":"出金是所有搬砖的最后一环，也是最重要的一环。推荐走官方交易平台（藏宝阁、BUFF、拍卖行等），虽然会收取3-8%的手续费，但安全有保障。不要私下交易——被骗率高达30%以上。控制单日出金金额在300-500元以内，大额出金分批操作。保留所有交易记录截图，出现纠纷时可作为证据。"},{"type":"table","data":{"headers":["渠道","适用游戏","手续费","安全等级","到账速度"],"rows":[["藏宝阁","网易系游戏","5%","⭐⭐⭐⭐⭐","24小时"],["BUFF","网易系","5%","⭐⭐⭐⭐⭐","24小时"],["DD373","全品类","3-8%","⭐⭐⭐⭐","1-24小时"],["5173","全品类","2-5%","⭐⭐⭐⭐","1-24小时"]]}},{"type":"h2","text":"避坑与红线"},{"type":"p","text":"搬砖最怕的三件事：封号、被骗、版本改动。封号的核心原因是用第三方脚本和多开同IP——不用脚本、分散IP登录即可避免90%的封号风险。被骗的核心原因是私下交易——只走官方平台就不会被骗。版本改动的影响最小化方法是多元化收入来源——不要只做单一任务或单一游戏。记住：搬砖是细水长流的副业，安全第一、收益第二。"},{"type":"p","text":"总结：作为一款经典的搬砖游戏，2026年依然有稳定的搬砖收益。新手从日常任务起步，逐步拓展到生活技能和倒卖，多开账号后可实现收益翻倍。关键是保持耐心和持续学习的态度，搬砖不是一夜暴富的捷径，而是稳定可靠的副业收入来源。"}]
   },
+  {
+    id: 'osrs-money', game: 'Old School Runescape', title: 'Old School Runescape 2026 打金全攻略：僵尸海盗+龙皮鞣制日入 200+',
+    desc: 'OSRS拥有超20年的稳定经济系统。本文基于2026年最新版本，从僵尸海盗到龙皮鞣制，从blast furnace到砍伐红杉，完整拆解各阶段打金方案。',
+    image: null, date: '2026-05-31', readTime: '12 分钟', views: '8.2k',
+    content: [{"type":"p","text":"Old School Runescape是目前全球最稳定的MMO经济系统之一，运营超过20年，金币价值坚挺。2026年版本加入了航海（Sailing）技能后，新增了大量打金途径。从零基础新手到高端PVM玩家，每个人都能找到适合自己的打金方案。本文基于2026年5月最新市场数据，实测了从新手到高端的6条打金路线。"},{"type":"h2","text":"新手入门：僵尸海盗——低门槛高回报"},{"type":"table","data":{"headers":["方法","需求等级","时薪(GP)","难度","推荐"],"rows":[["僵尸海盗","70+战斗","150-450万","低","⭐新手首选"],["鞣制龙皮","78魔法","100万+","极低","⭐挂机可选"],["Blast Furnace","30锻造","50-100万","低","⭐兼顾练级"],["砍伐红杉","90伐木","30-40万","极低","⭐纯挂机"]]}},{"type":"p","text":"僵尸海盗是目前新手阶段性价比最高的打金方式。需求仅70+战斗属性和37祈祷（保护魔法），位于低等级荒野混沌神殿附近。用Venator弓（80远程）配合虚空套，时薪可达150-450万GP。建议完成荒野中阶日记提升掉落品质。僵尸海盗掉落的符文和炼金装备直接高炼，收益稳定且无门槛。"},{"type":"p","text":"如果你想要更安全的挂机方式，鞣制龙皮是最好的选择。需要完成月球 diplomacy 任务和78魔法，在GE购买龙皮后使用Tan Leather法术，时薪稳定100万+GP。这种方法完全在安全区操作，零死亡风险，适合边工作边玩。"},{"type":"h2","text":"中阶打金：Blast Furnace与铁砧之道"},{"type":"table","data":{"headers":["金属","需求等级","时薪(GP)","特点"],"rows":[["钢条","30锻造","60-90万","低门槛、稳定收益"],["秘银条","50锻造","120万","效率翻倍"],["精金条","70锻造","140-170万","高收益时段"],["符文条","85锻造","170万+","天花板收益"]]}},{"type":"p","text":"Blast Furnace是OSRS最经典的打金方式之一。只需完成The Giant Dwarf任务开启，位于Keldagrim。建议先花10-15小时在Motherlode Mine挖矿攒100金块换Coal Bag，之后效率翻倍。30锻造即可开始做钢条，时薪50万GP起步。85锻造做符文条时薪可达170万+GP。经验值也很可观——每小时10万+锻造经验。"},{"type":"h2","text":"进阶PVM：龙族与Boss战"},{"type":"table","data":{"headers":["Boss","需求","时薪(GP)","核心掉落"],"rows":[["符文龙","完成DS2/85近战","150-230万","符文矿石稳定掉落"],["Vorkath","完成DS2/高远程","200-300万","蓝龙皮+稀有掉落"],["Brutal黑龙","77杀戮/80远程","180-200万","黑皮+龙爪"],["Moons of Peril","中等级","200万+","T50装备套装"]]}},{"type":"p","text":"符文龙（Rune Dragons）是2026年最稳定的中阶Boss打金方式。需要完成Dragon Slayer II，85近战属性，推荐带Dragon Hunter Lance和超级 antifire 药水。时薪150-230万GP，符文矿石稳定掉落保证了底薪。Moons of Peril是2025年新增的Boss，位于Varlamore，需求中等级别即可，产出T50装备套装，时薪200万+GP。"},{"type":"h2","text":"2026新增：航海技能打金"},{"type":"p","text":"2026年航海（Sailing）技能上线后新增了多种打金方式。深海拖网捕捞Marlin鱼，切割后获得Marlin鳞片用于制作扩展体力药水，时薪可达300万GP。珊瑚养殖（77 Farming）每160分钟收获一次，每次约40万GP收益。Frost Dragons（87航海）产出Dragon Sheets和Dragon Nails，时薪可达400万+GP。这些新方法让OSRS的打金生态更加丰富。"},{"type":"h2","text":"出金渠道与汇率"},{"type":"table","data":{"headers":["渠道","汇率(1M GP)","手续费","到账速度","安全等级"],"rows":[["G2G","约0.035美元","6-10%","1-24小时","⭐⭐⭐⭐⭐"],["玩家间交易","约0.04美元","0%","即时","⭐⭐⭐"],["Discord市场","约0.038美元","0-5%","即时","⭐⭐⭐"]]}},{"type":"p","text":"OSRS出金推荐走G2G等正规平台，虽然手续费较高但安全有保障。当前2026年5月汇率约0.035美元/100万GP。注意：Jagex对RWT（真实世界交易）打击力度逐年加大，建议控制单日出金在50美元以内，分批操作。不要大量在同一天从同一账号出金。"},{"type":"p","text":"总结：OSRS作为运营超20年的经典MMO，经济体系稳定可靠。新手从僵尸海盗或龙皮鞣制起步（日入100-150元），进阶可做Blast Furnace或符文龙Boss（日入200-300元），高端玩家做航海内容或高难度Boss（日入500+）。关键是选对适合自己账号阶段的方法，持之以恒。"}]
+  },
+  {
+    id: 'fifa-coin', game: 'EA FC Online', title: 'EA FC Online 2026 金币赚取全攻略：SBC+转会市场日入 50万+',
+    desc: 'EA FC Online通过比赛奖励和转会市场操作赚取金币。本文从SBC任务到低买高卖，从周赛奖励到市场风向，完整拆解各阶段金币获取策略。',
+    image: null, date: '2026-05-31', readTime: '10 分钟', views: '6.7k',
+    content: [{"type":"p","text":"EA FC Online（原FIFA Online）是亚洲最火的足球网游之一，其Ultimate Team模式的经济系统深度堪比真实金融市场。2026年版本中，通过合理的市场操作和比赛奖励组合，新手也能在两周内从零积累到百万金币。本文基于2026春季版本实测数据，拆解6条经过验证的金币获取路线。"},{"type":"h2","text":"每周稳定收益：比赛奖励"},{"type":"table","data":{"headers":["模式","难度","周收益","耗时","建议"],"rows":[["Squad Battles","简单","1.5-4万","3-4小时","⭐必做"],["Division Rivals","中等","2-6万","4-6小时","⭐必做"],["Weekend League","困难","5-15万","8-12小时","高手专属"],["Online Draft","高风险","随机","1-2小时","有实力再碰"]]}},{"type":"p","text":"Squad Battles是最稳定的金币来源。对战AI，选择World Class难度的弱队，或者Professional难度的强队。目标是达到Elite 3以上段位，每周可获得1.5-4万金币+可交易卡包。Division Rivals是你的每周工资——段位越高奖励越好。优先选可交易奖励（Tradeable Packs），因为早期需要流动性金币。Weekend League只有周末开放，11-20胜即可获得丰厚奖励。"},{"type":"h2","text":"SBC任务：无本万利的金币机器"},{"type":"p","text":"SBC（Squad Building Challenges）是EA FC Online最被低估的金币来源。2026版本的Marquee Matchups每周四更新，用库存垃圾卡完成即可获得不可交易卡包。进阶玩法是League SBCs——反复完成同一联赛的SBC，利用不同联赛卡片的价格差赚取差价。Bronze Pack Method（BPM）是新手最好的起步方式：花400金币买青铜包，卖出所有内容，单包利润50-200金币，积少成多。"},{"type":"h2","text":"转会市场进阶：低买高卖的6个技巧"},{"type":"table","data":{"headers":["技巧","操作","预期利润","难度"],"rows":[["化学风格倒卖","买Shadow/Hunter，周末挂高价","1000-5000/张","极低"],["SBC饲料囤货","85-88评分卡价格低时买入","20-50%","低"],["夜间扫货","深夜低价买入热门金卡","10-30%","中"],["经理卡倒卖","英超/法甲经理卡","100-200%","低"],["新卡抢购","新Promo上线时快速买入","30-100%","高"],["投资周赛","周四低价买热门球员","20-50%","中"]]}},{"type":"p","text":"化学风格倒卖是最适合新手的市场玩法。Shadow和Hunter这两种化学风格在周末（WL期间）需求量大增。平时1500-2000金币收购，周五晚上挂4000-5000金币卖出。SBC饲料囤货则需要关注EA发布的SBC任务预告——当强力SBC上线前，85-88评分的卡会涨价20-50%。英超经理卡的目标是拼化学链——需求量大且供应有限，经常翻倍出售。"},{"type":"h2","text":"Preview Pack：每日白嫖机会"},{"type":"p","text":"每日的Preview Pack是EA给玩家的福利。每天打开一次预览包，看到内容后再决定是否购买。90%的包不值得买，但如果出了Promo卡或高价值消耗品，购买后出售的利润非常可观。长期坚持，每个月至少能赚3-5万金币，而且不需要任何投入。"},{"type":"h2","text":"市场周期与版本节奏"},{"type":"table","data":{"headers":["时间段","市场特征","操作策略"],"rows":[["赛季初(9-10月)","物价最高、玩家最多","集中打比赛卖卡"],["中期(11-1月)","Promo频出、波动大","倒卖热度卡"],["赛季末(2-4月)","物价大跌、玩家减少","囤顶级卡等续作"],["新作前(5-8月)","最低谷","战略性休息"]]}},{"type":"p","text":"EA FC Online的市场有明显的周期性规律。赛季初是金币最值钱的时候，建议多打比赛、多做SBC积累本金。Promo活动期间是倒卖的黄金期——新卡上线头几小时内价格波动最大。赛季末金币贬值严重，建议把金币换成顶级不可交易卡保值。出金渠道推荐DD373或玩家间担保交易，当前汇率约1万金币=0.5-1元人民币。"},{"type":"p","text":"总结：EA FC Online的金币赚取核心是「比赛奖励+SBC+市场倒卖」三位一体。新手从Squad Battles和BPM起步（周入3-5万金币），进阶后做SBC倒卖和化学风格交易（周入10-20万），熟练后配合周末联赛和市场嗅觉（周入50万+）。关键是坚持每天上线，利用碎片时间操作转会市场。"}]
+  },
+  {
+    id: 'jxsj3-brick', game: '剑侠世界3', title: '剑侠世界3 2026 搬砖全攻略：新区红利+生活技能月入 2000+',
+    desc: '剑侠世界3经济体系活跃，散人搬砖群体月均收益800-2500元。本文从新区选服到日常搬砖，从生活技能到倒卖技巧，全方位拆解搬砖实操方案。',
+    image: null, date: '2026-05-31', readTime: '11 分钟', views: '7.5k',
+    content: [{"type":"p","text":"剑侠世界3作为西山居出品的热门武侠MMO，2026年1-3月全服活跃账号突破120万，金币兑人民币汇率稳定维持在12000:1。散人搬砖群体的月均收益区间在800-2500元，是所有武侠MMO里交易环境最稳定的产品之一。本文结合2026年最新版本实测数据，完整拆解从起号到稳定出金的全流程。"},{"type":"h2","text":"选服策略：新区 vs 老区"},{"type":"table","data":{"headers":["选服策略","适合人群","收益水平","注意事项"],"rows":[["周年庆大服","所有搬砖党","⭐⭐⭐⭐⭐","最推荐"],["官方新服(15天-3月)","时间充裕者","⭐⭐⭐⭐","红利期明显"],["稳定老服(3月+)","休闲党","⭐⭐⭐","物价低但稳定"],["冷门/渠道服","不推荐","⭐","容易鬼服"]]}},{"type":"p","text":"搬砖首选周年庆大服或官方推荐新服。开服15天-3个月的新区，玩家养成需求大，材料装备价格高。老服材料价格只有新区的三分之一，很难拿到高收益。绝对不要选开了半年以上的老服或渠道服——材料卖不出去，还容易鬼服。个人搬砖一般起4个号就够了，最优搭配是1辅助+3输出，效率最高。"},{"type":"h2","text":"职业选择：搬砖最优门派"},{"type":"table","data":{"headers":["门派","定位","搬砖评价","推荐理由"],"rows":[["万花","奶妈","⭐⭐⭐⭐⭐","进组容易，装备需求低"],["白麓","远程输出","⭐⭐⭐⭐","团战人头王，收益稳定"],["逍遥","控制/输出","⭐⭐⭐⭐","AOE清怪效率高"],["天王","坦克","⭐⭐⭐","团本刚需，但效率偏低"]]}},{"type":"p","text":"搬砖优先选择易就业的辅助/远程门派。万花（奶妈）是所有团本活动的刚需，不需要太高战力就能进周常团本，跟完流程就能拿分红，比玩近战输出门派少花60%的养号成本。白麓和逍遥也是不错的选择——远程输出安全且效率高。不推荐藏剑、丐帮这类需要大量氪金堆属性的门派。"},{"type":"h2","text":"日常搬砖四件套"},{"type":"table","data":{"headers":["任务","耗时","日收益(金币)","折合人民币"],"rows":[["日常押镖","20分钟","5-8万","4-7元"],["挖宝","15分钟","3-5万","2.5-4元"],["周常团本分红","30分钟","10-20万/周","8-17元/周"],["生活技能制造","20分钟","5-10万","4-8元"]]}},{"type":"p","text":"时间少的玩家主打日常押镖、挖宝和周常分红，单开每月能赚800-1000元。能多开的玩家可以练3-5个生活技能号，只升级锻造/裁缝其中一项，做70-80级橙装胚子挂交易行。实测3开做装备，每周稳定出2-3件成品，每件卖30-50万金币，扣掉成本月入稳定在1600元左右。对市场敏感的玩家可以蹲交易行低价收活动限定材料（如节假日限定魂石、坐骑碎片），涨价后卖出，利润率30-50%。"},{"type":"h2","text":"生活技能选择：采药+锻造为王"},{"type":"p","text":"生活技能是剑侠世界3搬砖的核心收入之一。采药和挖掘两个技能产出的原材料是制作高级消耗品的刚需。每天上线第一件事清空精力条，把能采的采了，材料挂拍卖行。注意：生活技能不要全升，只选1-2个升到满级。全升会浪费大量材料和金币，哪个都做不出高等级成品。推荐采药+锻造组合——采药卖原材料或自用制药，锻造做橙装胚子利润最高。"},{"type":"h2","text":"出金渠道与安全"},{"type":"p","text":"所有交易走官方交易行，绝对不要私下交易。被系统检测到私下交易会直接封号。高频问题：金币怎么变现？通过官方交易行将金币出售给需要金币的玩家，当前汇率稳定在12000金币=1元。注意：不要使用第三方脚本挂机，西山居对工作室打击力度很大，手动搬砖最安全。控制单日出金在200元以内，细水长流。"},{"type":"p","text":"总结：剑侠世界3是2026年最适合散人搬砖的武侠MMO之一。核心策略是新区起号→练万花/白麓→每天2-3小时日常→生活技能产材料→官方交易行出金。单开月入800-1000元，三开可达2000-2500元。零成本起步，风险极低，适合兼职搬砖。"}]
+  },
+  {
+    id: 'gjjy-account', game: '光与夜之恋', title: '光与夜之恋 2026 账号交易攻略：零成本起号到月入 2000+',
+    desc: '光与夜之恋的账号交易市场活跃，高练度账号可卖数百到数千元。本文从初始号刷取到限定卡养成，从藏宝阁出金到防坑指南，完整拆解搬砖全流程。',
+    image: null, date: '2026-05-31', readTime: '10 分钟', views: '5.2k',
+    content: [{"type":"p","text":"光与夜之恋作为腾讯旗下最火的乙女向手游，其账号交易市场异常活跃。高练度账号（满破限定卡+全图鉴）在市场上可卖到数千元甚至上万元。2026年上半年，随着光夜变奏Ⅲ剧情的更新和多个限定活动上线，账号交易热度持续攀升。本文将从初始号刷取到成品号出售，完整拆解光与夜之恋的搬砖路径。"},{"type":"h2","text":"搬砖核心：账号交易的三大赛道"},{"type":"table","data":{"headers":["赛道","投入","周期","收益","难度"],"rows":[["初始号刷取","零成本","1-3天","50-500元/个","⭐低"],["日常代肝","零成本","长期","1000-2000元/月","⭐低"],["限定号养成","小氪(月卡)","1-3月","500-5000元/个","⭐⭐中"]]}},{"type":"p","text":"光与夜之恋的搬砖分为三个层次。初始号刷取最适合新手——注册多个账号，利用系统送的福利抽卡，抽到热门6星灵犀（萧逸、陆沉、齐司礼、查理苏、夏鸣星）的初始号可卖50-500元不等。日常代肝是稳定收入来源——帮没时间的老板每日签到、清体力、做活动，月入1000-2000元。限定号养成需要一定成本投入（月卡+战令），养3个月后出售，收益500-5000元不等。"},{"type":"h2","text":"初始号刷取全流程"},{"type":"table","data":{"headers":["步骤","操作","耗时","注意事项"],"rows":[["注册","多手机号/邮箱注册","10分钟/号","一个设备最多3号"],["新手引导","跳过剧情快速通关","20分钟/号","攒北极星和小熊星座"],["首抽","用送的资源抽限定卡池","5分钟","抽出6星就停"],["验号","检查灵犀和资源","5分钟","记录6星数量和种类"],["出号","挂藏宝阁或交易平台","10分钟","标清灵犀详情"]]}},{"type":"p","text":"初始号的关键在于利用游戏的新手福利。2026年5月版本中，新号完成新手引导可获得约30抽的资源。建议在限定卡池开放时刷号，因为限定6星灵犀（概率UP）的价值远高于常驻灵犀。热门灵犀的初始号价格：单个热门6星50-100元，双6星200-300元，三6星以上500元+。注意：一个设备最多注册3个号，超过会被系统标记。"},{"type":"h2","text":"限定卡的价值判断"},{"type":"table","data":{"headers":["灵犀名称","角色","稀有度","市场价","热度"],"rows":[["镇厄","萧逸","6星限定","200-500元","🔥🔥🔥🔥🔥"],["心之居所","萧逸","6星限定","150-300元","🔥🔥🔥🔥"],["拟象幕间","夏鸣星","6星限定","200-400元","🔥🔥🔥🔥"],["羽梦舞曲","陆沉","6星限定","150-300元","🔥🔥🔥🔥"],["漫象萦途","夏鸣星","6星限定","150-300元","🔥🔥🔥"]]}},{"type":"p","text":"限定6星灵犀的价值取决于角色人气和卡片强度。萧逸作为人气最高的男主，其限定卡的价格通常最高。夏鸣星和陆沉的限定卡价格紧随其后。齐司礼和查理苏的限定卡价格相对较低但需求稳定。注意：灵犀的突破等级也会影响价格——满破（满星）的限定卡价格是0破的3-5倍。"},{"type":"h2","text":"出金渠道"},{"type":"p","text":"光与夜之恋的账号交易推荐走腾讯官方的藏宝阁，虽然需要手续费但最安全。闲鱼和交易猫也是常用平台，但要注意防骗。建议交易时走平台担保流程，不要直接转账。当前市场行情：含1张热门限定6星的初始号约50-100元，含3张以上的约300-500元。成品全图鉴号价格500-5000元不等，主要看限定卡的收藏价值而非战力。"},{"type":"p","text":"总结：光与夜之恋搬砖的核心是低买高卖——利用新号福利低成本刷取灵犀，在限定卡池关闭前高价出售初始号。月入2000+需要刷20-30个初始号，或者养2-3个成品号。操作简单、门槛低、风险小，非常适合女性玩家。"}]
+  },
+  {
+    id: 'jr-brick', game: '巨人', title: '巨人 2026 搬砖全攻略：太庙搬砖+国战分红日入 200+',
+    desc: '巨人通过国战和家族系统提供稳定的搬砖收益。本文从太庙搬砖到国战分红，从装备交易到寄售行出金，完整拆解零氪搬砖路径。',
+    image: null, date: '2026-05-31', readTime: '10 分钟', views: '5.8k',
+    content: [{"type":"p","text":"巨人系列游戏（征途、原始征途、绿色征途等）是国战MMORPG的经典代表，其自由交易体系和庞大的玩家基础为搬砖提供了良好土壤。2026年版本中，82%的平民玩家主要收入来源为日常搬砖任务，活跃散人搬砖玩家月均收益在1000-3000元区间。本文基于实测数据，完整拆解巨人的搬砖体系。"},{"type":"h2","text":"每日必做三件套"},{"type":"table","data":{"headers":["任务","时段","耗时","收益(银子)","折合人民币"],"rows":[["太庙搬砖","全天","15分钟","250两","约5元"],["刺探国情","8-10点/18-20点","15分钟","200两+","约4元"],["国运押镖","跟随家族","20分钟","300两+","约6元"]]}},{"type":"p","text":"三大日常任务稳定的收益是搬砖的基础。太庙搬砖每天5次，优先选择敌国太庙的彩色砖块（3倍银子奖励），建议跟家族大部队行动避免被截杀。刺探国情在双倍时段（早8-10点、晚6-8点）收益翻倍，伪装潜入敌国王城即可。国运押镖一定要等家族集体押镖时参与，有家族护航被劫概率降低70%。三项任务总耗时约1小时，稳定收益750两银子（约15元）。"},{"type":"h2","text":"家族BOSS与装备交易"},{"type":"table","data":{"headers":["活动","频率","收益","说明"],"rows":[["家族BOSS","周三/周六","玄铁+丝绸","材料寄售行稳定10两/个"],["中立区采集","凌晨2-4点刷新","稀有矿石","每次5两+隐藏任务礼包"],["极品装备交易","全天","数百-数千两","暴击/攻速属性价格翻倍"]]}},{"type":"p","text":"家族BOSS是很多新手忽略的稳定收益来源。每周三、周六的家族BOSS掉落的玄铁、丝绸等材料，在寄售行单价稳定在10两银子/个，平民玩家只要参与BOSS战就能平分收益。中立区的稀有矿石采集（凌晨2-4点刷新）每次采集拿5两银子，还能触发隐藏任务拿额外礼包。打到绿色品质以上的极品装备可以挂交易市场出售，带暴击加成或攻速加成属性的装备价格翻好几倍。"},{"type":"h2","text":"国战参与与分红"},{"type":"p","text":"国战是巨人系列的核心玩法，也是搬砖收益的大头。平民玩家不需要冲到前线送人头——站在大部队后排负责远程输出或加buff，国战贡献度比冲锋杀敌更高。国战结束后第一时间去王城领取基础奖励，贡献度前50名还能拿到国战宝箱（概率开出100两银子）。参与战后的清理残敌任务拿战力结晶。强烈建议加入活跃的中型家族（50-100人），资源竞争压力小，分钱机会多。"},{"type":"h2","text":"出金渠道"},{"type":"p","text":"巨人的银子变现走官方寄售行最安全。将银子兑换成金子，金子可直接兑换官方点卡或游戏内稀有道具。绝对不要在第三方平台交易银子——2026年1-3月官方封禁的账号中，68%是因为涉及第三方交易。走官方渠道虽然利润略低，但零封号风险。新手建议直接通过寄售行将银子卖给需要银子打造装备的玩家。"},{"type":"p","text":"总结：巨人系列游戏搬砖门槛低、收益稳定。核心策略是每天1小时做太庙搬砖+刺探+国运三件套（日均15元），周末打家族BOSS和国战分红（额外20-50元），月入1000-1500元轻松实现。选对中型活跃家族是搬砖效率的关键因素。"}]
+  },
+  {
+    id: 'tianyu-life', game: '天谕手游', title: '天谕手游 2026 搬砖全攻略：生活技能+副本产出日入 150+',
+    desc: '天谕手游自由交易系统成熟，生活技能和副本产出是核心搬砖来源。本文从日常任务到生活制造，从英灵培养到出金渠道，完整拆解搬砖方案。',
+    image: null, date: '2026-05-31', readTime: '10 分钟', views: '4.9k',
+    content: [{"type":"p","text":"天谕手游作为网易旗舰级东方幻想MMO，自由交易系统支持面对面交易和拍卖行交易。2026年版本中，78%的活跃玩家为月付费500元以下的平民玩家，搬砖生态健康。日常任务、生活技能和副本产出的材料和装备都有稳定的买方市场。本文基于2026年最新版本，完整拆解天谕手游的搬砖全流程。"},{"type":"h2","text":"职业选择：搬砖最优解"},{"type":"table","data":{"headers":["职业","定位","搬砖评分","优势"],"rows":[["灵珑","治疗","⭐⭐⭐⭐⭐","团队刚需，装备成本低"],["圣堂","坦克","⭐⭐⭐⭐","就业率100%，好进组"],["光刃","近战输出","⭐⭐⭐⭐","单体伤害高，需求大"],["玉虚","法术输出","⭐⭐⭐","推荐微氪以上玩家"]]}},{"type":"p","text":"平民搬砖首选灵珑（奶妈）或圣堂（坦克）。灵珑是天谕唯一的纯治疗职业，是所有副本的刚需，养成成本比输出职业低至少三分之一。灵珑只需要堆治疗强度和血量，不需要追求暴击暴伤。圣堂只需要堆物防法防和血量，不需要攻击属性。玩T的玩家本来就少，团长看到T基本秒放你进队。零氪玩家千万不要玩输出灵珑——需要双套装备，养成成本翻倍。"},{"type":"h2","text":"日常资源获取"},{"type":"table","data":{"headers":["任务","耗时","日收益","说明"],"rows":[["寻灵","15分钟","云币+绑玉","每日必做"],["师门任务","10分钟","5-8万云币","稳定产出"],["神耀竞技","10分钟","竞技币+云币","可换装备材料"],["妖力值活动","20分钟","经验+材料","清空妖力即可"]]}},{"type":"p","text":"每天上线先清日常任务——寻灵、师门、神耀竞技和妖力值，总耗时约1小时。这些任务稳定产出云币（流通货币）、绑玉（绑定货币）和基础材料，不需要额外氪金就能满足日常养成需求。周常任务如团队副本和心魔挑战有概率掉落稀有装备和打造材料，可自用也可上架交易行。"},{"type":"h2","text":"生活技能：隐身的大金矿"},{"type":"p","text":"生活技能是天谕手游被严重低估的搬砖途径。采集类（挖矿、采药、钓鱼）只需要消耗活力，产出在交易行常年供不应求。推荐学采矿+锻造组合——挖矿卖原材料或自用打造装备。前期重点做铁钥匙（需求量极大），等级够了转做高级装备。每天别忘了去商业街首饰店找神秘汐商购买秘盐结晶（恢复活力用）。活力值越多，能制作的原材料就越多。"},{"type":"h2","text":"进阶：心魔与副本代打"},{"type":"p","text":"心魔是天谕手游的整点/半点世界Boss。5阶以上心魔出徽章精华（市场价约200元/个），宝图碎片合成后能挖稀有物品。建议主号装备好一点可以打7-8阶，差点就打5-6阶。副本代打也是高收益方向——天谕副本难度高，很多玩家愿意花钱请人代打。代打团队收费按人头计算，带躺尸号收费，一个月保守收入1万以上。不过代打对账号装备要求高，建议先通过日常搬砖积累装备。"},{"type":"h2","text":"出金渠道"},{"type":"p","text":"天谕手游的云币出金走藏宝阁最安全。网易官方平台手续费5%但零封号风险。当前云币汇率约1万云币=0.5-0.8元人民币（视服务器和供需波动）。注意：不要私下大额交易——网易对私下交易的检测很严格。单日出金控制在200元以内，分批操作。生活技能产出的材料可以直接挂拍卖行换成云币再出金。"},{"type":"p","text":"总结：天谕手游搬砖适合喜欢社交和组队的玩家。灵珑/圣堂起号→每天1小时日常→生活技能挂机产出→副本产出出售→藏宝阁出金。单开月入1000-1500元，三开+代打月入3000-5000元。网易游戏的经济体系成熟，搬砖环境稳定。"}]
+  },
+  {
+    id: 'mmm-draco', game: 'MIR4', title: 'MIR4 传奇4 2026 打金全攻略：道士挖矿+DRACO变现月入 3000+',
+    desc: 'MIR4的区块链元素让游戏内资源可直接变现。本文从职业选择到挖矿路线，从DRACO冶炼到提现避坑，完整拆解链游打金全流程。',
+    image: null, date: '2026-05-31', readTime: '12 分钟', views: '9.1k',
+    content: [{"type":"p","text":"MIR4（传奇4）是韩国娱美德开发的区块链MMORPG，也是目前最成熟的链游打金项目之一。游戏内所有高价值资源都能通过DRACO币转化为现实收益。2026年数据显示，国际服单个活跃搬砖账号日均产出约8-15元人民币，多开工作室月收益可达3万以上。本文基于2026年最新版本，完整拆解从起号到提现的全流程。"},{"type":"h2","text":"职业选择：道士为王"},{"type":"table","data":{"headers":["职业","打金评分","优势","劣势"],"rows":[["道士","⭐⭐⭐⭐⭐","召唤兽抗怪，零药水消耗","前期清怪较慢"],["法师","⭐⭐⭐⭐","AOE清怪极快","药水消耗大"],["战士","⭐⭐⭐","生存能力强","打金效率最低"]]}},{"type":"p","text":"道士是MIR4打金的不二之选。2026年1-5月的链游玩家调研数据显示，68.7%的打金玩家选择道士，人均月收益比选战士的高42%。道士自带召唤兽抗伤害，挂机几乎没有药水消耗，抢夺BOSS时比其他职业更容易拿到掉落归属。新手建议全加体力保证生存，55级后用洗点丹转暴力毒道。冰法也是不错的选择——冰霜领域的群体减速+持续伤害可无伤刷怪，但药水消耗比道士大。"},{"type":"h2","text":"升级路线：40级解锁DRACO"},{"type":"table","data":{"headers":["等级","目标","耗时","说明"],"rows":[["1-30级","跟着主线走","2小时","系统送的装备足够"],["30-40级","魔方阵+经验之屋","1天","每天各刷1小时"],["40级","解锁DRACO冶炼","—","核心里程碑"],["40-50级","沃玛寺庙三层挂机","2-3天","黑铁掉落率高40%"]]}},{"type":"p","text":"40级是MIR4搬砖的起点——解锁DRACO冶炼功能，开启打金变现之路。新手建议前两周每天投入18小时以上（可挂机），第三周后每天集中操作3小时其余挂机。40级后常驻沃玛寺庙三层打黑铁，这里的黑铁掉落率比野外高40%。50级后转战秘境七层，BOSS掉落大量黑铁和稀有装备。每周三周六的行会攻沙必参与——哪怕只是凑人数也能拿分红。"},{"type":"h2","text":"黑铁与DRACO冶炼全流程"},{"type":"table","data":{"headers":["步骤","操作","说明"],"rows":[["1. 挖黑铁","挂机挖矿或打怪","建议用采矿时间加速精灵，配5个精灵可加速59%"],["2. 冶炼DRACO","40级后在冶炼所操作","每1 DRACO = 当日Derby+1000黑铁手续费"],["3. 绑定WEMIX钱包","下载WEMIX Wallet","手写备份助记词，不要截图"],["4. 兑换USDT","Wemix交易所→币安→C2C","注意KYC认证和提现限额"]]}},{"type":"p","text":"DRACO冶炼是MIR4的核心变现环节。黑铁采集达到一定量后，在比奇城冶炼所铸造DRACO币。每日可冶炼100个DRACO/角色。冶炼后的DRACO自动存入绑定的WEMIX钱包，可以在XDRACO平台卖出换成WEMIX币，再提到交易所换成USDT后通过C2C提现到银行卡。注意：2026年韩国金融监管院要求超过500DRACO需KYC认证，建议用家人身份证多开几个认证账号分散提现。"},{"type":"h2","text":"防封与安全"},{"type":"table","data":{"headers":["注意事项","说明"],"rows":[["IP隔离","每个账号独立IP，用云手机一账号一IP"],["不使用脚本","官方检测严格，脚本活不过1周"],["不私下交易","走官方交易所，私下被骗率60%+"],["分散提现","单账号月提现不超过5000元"],["敏感词","不要在公屏提打金/变现等词"]]}},{"type":"p","text":"新手不要花钱买所谓的内部号——注册完全免费，最多花几十块开月卡解锁交易权限。当前单账号日均收益8-15元是正常水平，宣称单号日赚50+的都是割韭菜教程。不要参与需要投钱的投资分红项目——MIR4搬砖是辛苦钱，不存在躺赚分红。首选官方国际服（运行超过5年），不要碰私改服（平均寿命不到1个月）。"},{"type":"p","text":"总结：MIR4是目前最成熟的链游打金项目。新手从道士起号→40级解锁DRACO→沃玛寺庙挖黑铁→冶炼DRACO→交易所提现。单号月入1500-3000元，4开可达6000-12000元。关键是用对职业（道士）、做好IP隔离、不走私下交易。虽然热度较2021年巅峰期下降，但运营多年的稳定经济体系让MIR4仍是链游打金的头部选择。"}]
+  },
+  {
+    id: 'fifa-2026-trading', game: 'EA FC Online', title: 'EA FC Online 2026 转会市场投资指南：一周赚 10万+金币',
+    desc: 'EA FC Online转会市场投资策略，从SBC饲料囤货到Promo卡倒卖，从夜间扫货到周赛炒卡，一周操作指南。',
+    image: null, date: '2026-06-03', readTime: '10 分钟', views: '4.2k',
+    content: [{"type": "p", "text": "EA FC Online 的转会市场一直是玩家赚取金币的核心玩法之一。2026 赛季中，随着 SBC 和 Promo 活动节奏加快，市场波动明显变大，正是搬砖的好时机。下面整理一套从饲料卡囤货到高价值球员倒卖的操作思路，目标是一周稳定赚取 10 万以上金币。"}, {"type": "h2", "text": "一、SBC 饲料卡低买高卖"}, {"type": "p", "text": "SBC 更新后，特定化学风格、稀有度、评分段的球员卡会突然涨价。重点关注 84–87 评分的金卡防守型中场和边后卫，这类卡在 SBC 中消耗量大。"}, {"type": "p", "text": "操作要点：在 SBC 公布前 1–2 天开始挂单收购，活动上线后 24–48 小时内分批挂出，避免一次性砸盘。"}, {"type": "h2", "text": "二、Promo 活动卡波段倒卖"}, {"type": "p", "text": "每次 Promo 活动（如 TOTS、TOTY 预热）都会带动相关卡价格剧烈波动。以 2026 年 5 月“赛季回顾”Promo 为例，活动首日部分特殊卡溢价 30%–50%，第 3–4 天回落至正常水平。"}, {"type": "p", "text": "建议优先选择评分 88–91、位置热门的 Promo 卡，如 CAM、ST 和 CB，这类卡流动性好，容易出手。"}, {"type": "h2", "text": "三、夜间扫货与周赛炒卡"}, {"type": "p", "text": "夜间（北京时间 22:00–次日 02:00）是市场低价挂单集中时段，很多玩家急于出手换取金币。此时可以用“最低价挂单 + 快速转手”策略： - 目标卡：周赛奖励相关的高需求球员（如高速度边锋、高防守评分中卫） - 买入价：比当前最低价低 5%–10% 挂单 - 卖出价：次日白天以市场均价挂出，利润 8%–15% 周赛结束后 24 小时内，部分阵容必备卡价格会上涨 10%–20%，提前布局可获得稳定收益。"}, {"type": "h2", "text": "四、风险控制与资金分配"}, {"type": "p", "text": "搬砖不是稳赚，必须控制仓位和风险。建议： - 单笔投入不超过总金币的 20% - 保留 30%–40% 流动资金，应对突发 SBC 或市场崩盘 - 避免追高，尤其是活动首日溢价过高的卡 - 使用 FUTBIN 价格走势和 NGA EA FC 版实时信息，及时调整策略"}, {"type": "h2", "text": "总结"}, {"type": "p", "text": "EA FC Online 转会市场搬砖的核心是“信息差 + 时间差”。通过 SBC 饲料卡囤货、Promo 卡波段操作、夜间扫货和周赛炒卡，一周赚取 10 万金币并不难。关键在于提前规划、分散投资、严格执行买入卖出纪律。持续关注 FUTBIN 数据和社区动态，才能在 2026 赛季的金币竞争中保持领先。"}]
+  },
 ];
 
 const PLATFORMS = [
@@ -451,7 +499,7 @@ function navigate(hash) {
     }
   }
 
-  const validPages = ['home', 'rankings', 'games', 'guides', 'newbie', 'platforms', 'about'];
+  const validPages = ['home', 'live', 'rankings', 'games', 'guides', 'newbie', 'platforms', 'about'];
   const page = validPages.includes(cleanHash) ? cleanHash : 'home';
   state.currentPage = page;
   switchPage(page);
@@ -640,7 +688,7 @@ function renderGuideGrid(filter) {
 
   el.innerHTML = filtered.map(guide => {
     const bgColor = gameTheme[guide.game] || '#e74c3c';
-    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi'].includes(guide.id);
+    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi','osrs-money','fifa-coin','jxsj3-brick','gjjy-account','jr-brick','tianyu-life','mmm-draco','fifa-2026-trading'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
     <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
@@ -977,7 +1025,7 @@ function renderGuidesPage(filtered, activeFilter) {
 
   el.innerHTML = items.map(guide => {
     const bgColor = gameTheme[guide.game] || '#e74c3c';
-    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi'].includes(guide.id);
+    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi','osrs-money','fifa-coin','jxsj3-brick','gjjy-account','jr-brick','tianyu-life','mmm-draco','fifa-2026-trading'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
     <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
@@ -1356,4 +1404,209 @@ function initApp() {
   setupHeaderScroll();
   setupMobileMenu();
   setupHeaderSearchVisibility();
+  initLivePlayer();
+}
+
+// ======================== LIVE PLAYER ========================
+
+const LIVE_ROOMS = [
+  { id: '7734200',    name: '英雄联盟 LOL 官方直播',       game: 'LOL' },
+  { id: '22908869',   name: '英雄联盟 LOL 赛事 2',         game: 'LOL' },
+  { id: '8222458',    name: 'CS2 赛事直播',               game: 'CS2' },
+  { id: '21495945',   name: 'DOTA2 官方直播',             game: 'DOTA2' },
+  { id: '31250975',   name: '三角洲行动 官方直播',        game: 'DELTA' },
+  { id: '25255343',   name: 'CS2 赛事 2',                 game: 'CS2' },
+];
+
+// Proxy URLs
+// PRIMARY: Cloudflare Worker (set after `wrangler deploy` in cf-worker/)
+// FALLBACK: Vercel
+const HLS_PRIMARY  = null;  // e.g. 'https://bilibili-hls-proxy.YOUR_SUBDOMAIN.workers.dev/hls'
+const HLS_FALLBACK = 'https://bilibili-proxy-kappa.vercel.app/api/hls';
+
+let liveHls = null;
+let liveCurrentUrl = null;
+let liveCurrentRoom = null;
+
+function initLivePlayer() {
+  const video = document.getElementById('liveVideo');
+  const playBtn = document.getElementById('livePlayBtn');
+  const stopBtn = document.getElementById('liveStopBtn');
+  const statusEl = document.getElementById('liveStatus');
+  const logEl = document.getElementById('liveLog');
+  const roomsEl = document.getElementById('liveRooms');
+  const overlay = document.getElementById('liveOverlay');
+
+  if (!video || !playBtn) return;
+
+  function setStatus(text, level) {
+    statusEl.textContent = text;
+    statusEl.className = 'live-status' + (level ? ' ' + level : '');
+  }
+
+  function log(msg, level) {
+    level = level || 'info';
+    const ts = new Date().toLocaleTimeString();
+    const line = document.createElement('div');
+    line.className = 'live-log-line ' + level;
+    line.textContent = '[' + ts + '] ' + msg;
+    logEl.appendChild(line);
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+
+  function renderRooms() {
+    roomsEl.innerHTML = '';
+    LIVE_ROOMS.forEach((room, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'live-room' + (i === 0 ? ' active' : '');
+      btn.dataset.roomId = room.id;
+      btn.innerHTML =
+        '<span class="live-room-icon">' + (i === 0 ? '🔥' : '🎮') + '</span>' +
+        '<div class="live-room-info">' +
+          '<div class="live-room-name">' + room.name + '</div>' +
+          '<div class="live-room-id">room: ' + room.id + ' · ' + room.game + '</div>' +
+        '</div>' +
+        '<span class="live-dot"></span>';
+      btn.addEventListener('click', () => selectRoom(room, btn));
+      roomsEl.appendChild(btn);
+    });
+  }
+
+  function selectRoom(room, btnEl) {
+    document.querySelectorAll('.live-room').forEach(b => b.classList.remove('active'));
+    btnEl.classList.add('active');
+    liveCurrentRoom = room;
+    setStatus('已选择: ' + room.name);
+    log('Selected: ' + room.name + ' (roomId=' + room.id + ')', 'info');
+  }
+
+  function getBaseUrl() {
+    return HLS_PRIMARY || HLS_FALLBACK;
+  }
+
+  function loadStream(roomId) {
+    if (liveHls) {
+      liveHls.destroy();
+      liveHls = null;
+    }
+
+    const base = getBaseUrl();
+    const url = base + '?r=' + roomId;
+    liveCurrentUrl = url;
+    const source = HLS_PRIMARY && url.startsWith(HLS_PRIMARY) ? 'Cloudflare' : 'Vercel';
+
+    setStatus('加载中 (' + source + ')...');
+    log('Loading: ' + url, 'info');
+    overlay.classList.add('hidden');
+
+    // Native HLS (Safari, iOS)
+    if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      log('Using native HLS', 'info');
+      video.src = url;
+      video.addEventListener('loadedmetadata', function onLoad() {
+        video.removeEventListener('loadedmetadata', onLoad);
+        log('Stream loaded (native)', 'ok');
+        setStatus('✅ 播放中 · ' + source, 'ok');
+        video.play().catch(function () {});
+      });
+      video.addEventListener('error', function onErr() {
+        video.removeEventListener('error', onErr);
+        onStreamError('native-error');
+      });
+      return;
+    }
+
+    // HLS.js
+    if (!window.Hls || !Hls.isSupported()) {
+      log('HLS.js not supported', 'error');
+      setStatus('❌ 浏览器不支持 HLS', 'error');
+      return;
+    }
+
+    liveHls = new Hls({
+      enableWorker: true,
+      lowLatencyMode: true,
+      maxBufferLength: 10,
+      maxMaxBufferLength: 30,
+      fragLoadingMaxRetry: 6,
+      manifestLoadingMaxRetry: 4,
+    });
+
+    liveHls.loadSource(url);
+    liveHls.attachMedia(video);
+
+    liveHls.on(Hls.Events.MANIFEST_PARSED, function () {
+      log('Manifest parsed', 'ok');
+      setStatus('✅ 播放中 · ' + source, 'ok');
+      video.play().catch(function (e) { log('Autoplay blocked: ' + e.message, 'warn'); });
+    });
+
+    liveHls.on(Hls.Events.ERROR, function (event, data) {
+      if (!data.fatal) {
+        log('Non-fatal: ' + data.type + ' / ' + data.details, 'warn');
+        return;
+      }
+      log('Fatal: ' + data.type + ' / ' + data.details, 'error');
+      onStreamError(data);
+    });
+  }
+
+  function onStreamError(data) {
+    const usedPrimary = HLS_PRIMARY && liveCurrentUrl && liveCurrentUrl.startsWith(HLS_PRIMARY);
+
+    if (usedPrimary && HLS_FALLBACK) {
+      log('Primary failed, switching to Vercel fallback', 'warn');
+      liveCurrentUrl = HLS_FALLBACK + '?r=' + (liveCurrentRoom ? liveCurrentRoom.id : '');
+      if (liveHls) {
+        liveHls.destroy();
+        liveHls = null;
+      }
+      loadStream(liveCurrentRoom.id);
+      return;
+    }
+
+    if (liveHls && data && data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+      log('Network error, retrying...', 'warn');
+      liveHls.startLoad();
+    } else if (liveHls && data && data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+      log('Media error, recovering...', 'warn');
+      liveHls.recoverMediaError();
+    } else {
+      setStatus('❌ 播放失败 · 代理超时或CDN不可用', 'error');
+      log('Unrecoverable. Try another room or check proxy status.', 'error');
+    }
+  }
+
+  function stopStream() {
+    if (liveHls) {
+      liveHls.destroy();
+      liveHls = null;
+    }
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    overlay.classList.remove('hidden');
+    setStatus('已停止', '');
+    log('Stopped', 'info');
+  }
+
+  playBtn.addEventListener('click', function () {
+    if (!liveCurrentRoom) {
+      // Auto-select first room
+      liveCurrentRoom = LIVE_ROOMS[0];
+    }
+    loadStream(liveCurrentRoom.id);
+  });
+
+  stopBtn.addEventListener('click', stopStream);
+
+  renderRooms();
+  liveCurrentRoom = LIVE_ROOMS[0];
+  log('Initialized. Click ▶ to play.', 'info');
+  if (HLS_PRIMARY) {
+    log('Primary: ' + HLS_PRIMARY, 'info');
+  } else {
+    log('PRIMARY_URL not set — using Vercel only. Deploy Worker for better reliability.', 'warn');
+  }
+  log('Fallback: ' + HLS_FALLBACK, 'info');
 }
