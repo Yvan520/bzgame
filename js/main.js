@@ -1496,59 +1496,93 @@ function initLivePlayer() {
     const source = HLS_PRIMARY && url.startsWith(HLS_PRIMARY) ? 'Cloudflare' : 'Vercel';
 
     setStatus('加载中 (' + source + ')...');
-    log('Loading: ' + url, 'info');
+    log('GET ' + url, 'info');
     overlay.classList.add('hidden');
 
-    // Native HLS (Safari, iOS)
-    if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      log('Using native HLS', 'info');
-      video.src = url;
-      video.addEventListener('loadedmetadata', function onLoad() {
-        video.removeEventListener('loadedmetadata', onLoad);
-        log('Stream loaded (native)', 'ok');
-        setStatus('✅ 播放中 · ' + source, 'ok');
-        video.play().catch(function () {});
+    // Pre-fetch m3u8 with explicit timeout (8s) so we get clear errors
+    // instead of HLS.js silently hanging
+    const controller = new AbortController();
+    const timeout = setTimeout(function () { controller.abort(); }, 8000);
+
+    fetch(url, { signal: controller.signal })
+      .then(function (res) {
+        clearTimeout(timeout);
+        if (!res.ok) {
+          throw new Error('HTTP ' + res.status);
+        }
+        return res.text();
+      })
+      .then(function (m3u8Text) {
+        log('m3u8 fetched: ' + m3u8Text.length + ' bytes', 'ok');
+
+        // Native HLS (Safari, iOS) — use blob URL
+        if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          log('Using native HLS (blob URL)', 'info');
+          const blob = new Blob([m3u8Text], { type: 'application/vnd.apple.mpegurl' });
+          const blobUrl = URL.createObjectURL(blob);
+          video.src = blobUrl;
+          video.addEventListener('loadedmetadata', function onLoad() {
+            video.removeEventListener('loadedmetadata', onLoad);
+            log('Native stream loaded', 'ok');
+            setStatus('✅ 播放中 · ' + source, 'ok');
+            video.play().catch(function () {});
+          });
+          video.addEventListener('error', function onErr() {
+            video.removeEventListener('error', onErr);
+            URL.revokeObjectURL(blobUrl);
+            onStreamError('native-error');
+          });
+          return;
+        }
+
+        // HLS.js — feed m3u8 text directly
+        if (!window.Hls || !Hls.isSupported()) {
+          log('HLS.js not supported', 'error');
+          setStatus('❌ 浏览器不支持 HLS', 'error');
+          return;
+        }
+
+        liveHls = new Hls({
+          enableWorker: true,
+          lowLatencyMode: true,
+          maxBufferLength: 10,
+          maxMaxBufferLength: 30,
+          fragLoadingMaxRetry: 4,
+          manifestLoadingMaxRetry: 2,
+        });
+
+        liveHls.attachMedia(video);
+        // Load source from text by creating a fake URL
+        // HLS.js 1.5+ supports loadSource with a string but we'll use a blob URL
+        const blob = new Blob([m3u8Text], { type: 'application/vnd.apple.mpegurl' });
+        const blobUrl = URL.createObjectURL(blob);
+        liveHls.on(Hls.Events.MANIFEST_PARSED, function () {
+          log('Manifest parsed', 'ok');
+          setStatus('✅ 播放中 · ' + source, 'ok');
+          video.play().catch(function (e) { log('Autoplay blocked: ' + e.message, 'warn'); });
+        });
+        liveHls.on(Hls.Events.ERROR, function (event, data) {
+          if (!data.fatal) {
+            log('Non-fatal: ' + data.type + ' / ' + data.details, 'warn');
+            return;
+          }
+          log('Fatal: ' + data.type + ' / ' + data.details, 'error');
+          URL.revokeObjectURL(blobUrl);
+          onStreamError(data);
+        });
+        liveHls.loadSource(blobUrl);
+      })
+      .catch(function (err) {
+        clearTimeout(timeout);
+        if (err.name === 'AbortError') {
+          log('TIMEOUT (>8s) fetching m3u8 from ' + source, 'error');
+          setStatus('❌ 代理超时（' + source + '）', 'error');
+        } else {
+          log('Fetch failed: ' + err.message, 'error');
+          setStatus('❌ 加载失败: ' + err.message, 'error');
+        }
+        onStreamError(err);
       });
-      video.addEventListener('error', function onErr() {
-        video.removeEventListener('error', onErr);
-        onStreamError('native-error');
-      });
-      return;
-    }
-
-    // HLS.js
-    if (!window.Hls || !Hls.isSupported()) {
-      log('HLS.js not supported', 'error');
-      setStatus('❌ 浏览器不支持 HLS', 'error');
-      return;
-    }
-
-    liveHls = new Hls({
-      enableWorker: true,
-      lowLatencyMode: true,
-      maxBufferLength: 10,
-      maxMaxBufferLength: 30,
-      fragLoadingMaxRetry: 6,
-      manifestLoadingMaxRetry: 4,
-    });
-
-    liveHls.loadSource(url);
-    liveHls.attachMedia(video);
-
-    liveHls.on(Hls.Events.MANIFEST_PARSED, function () {
-      log('Manifest parsed', 'ok');
-      setStatus('✅ 播放中 · ' + source, 'ok');
-      video.play().catch(function (e) { log('Autoplay blocked: ' + e.message, 'warn'); });
-    });
-
-    liveHls.on(Hls.Events.ERROR, function (event, data) {
-      if (!data.fatal) {
-        log('Non-fatal: ' + data.type + ' / ' + data.details, 'warn');
-        return;
-      }
-      log('Fatal: ' + data.type + ' / ' + data.details, 'error');
-      onStreamError(data);
-    });
   }
 
   function onStreamError(data) {
