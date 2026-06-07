@@ -1,0 +1,54 @@
+name: Daily BZGame Article
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: site
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install openai
+
+      - name: Generate article
+        env:
+          LONGCAT_API_KEY: ${{ secrets.LONGCAT_API_KEY }}
+          LONGCAT_API_BASE_URL: ${{ secrets.LONGCAT_API_BASE_URL }}
+          LONGCAT_MODEL_NAME: ${{ secrets.LONGCAT_MODEL_NAME }}
+        run: |
+          python main/scripts/bzgame-gen/generate_bzgame_article.py \
+            --target-dir site
+
+      - name: Commit and push
+        run: |
+          cd site
+          git config user.name "BZGame Bot"
+          git config user.email "bot@bzgame.gamewayz.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: daily article auto-generate $(date +%Y-%m-%d)"
+            git push
+          fi
