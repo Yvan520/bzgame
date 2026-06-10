@@ -31,50 +31,66 @@ def existing():
     return {p.stem for p in GD.glob("*.html")} if GD.exists() else set()
 
 def prompt(t):
-    return f"""写一篇关于"{t['game']}"的搬砖攻略文章。
+    return f"""你是一个真的有多年搬砖经验的老玩家。写一篇关于"{t['game']}"的搬砖攻略，语气要像在游戏群里跟朋友聊天，别端着。
+
 ## 信息
 - 游戏：{t['game']}
 - 标题：{t['title']}
 - 简介：{t['description']}
 - 关键词：{', '.join(t['keywords'])}
 - 来源：{', '.join(t['sources'])}
-## 要求
-1. 简体中文，面向搬砖玩家，有真实数据
-2. 4-6个h2小标题（##开头），最后是"## 总结"
-3. 至少2个Markdown表格
-4. 600-1000字，直接输出纯Markdown"""
+## 硬性要求
+1. 写800-1000字，每段要有具体数字（收益、时间、价格），别写"很多/一些/大概"
+2. 4-6个h2小标题（##开头），最后一个必须是"## 总结"
+3. 至少2个Markdown表格，表格要真实有数据
+4. 自然口语化——别用"值得注意的是/综上所述/众所周知/我们"这种AI套话
+5. 最好带点个人视角——"我试过/上个月/有个朋友/亲身测过"这种
+6. 直接输出纯Markdown，不要代码块包裹"""
+
+def fmt(s):
+    s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s)
+    s = re.sub(r'\*(.+?)\*', r'<em>\1</em>', s)
+    return s
 
 def parse_md(md):
     c = []; lines = md.strip().split("\n"); i = 0
-    ih = False; th = []; tr = []; ct = []
+    ih = False; th = []; tr = []; li = []; ct = []; in_li = False
     def fl():
-        nonlocal ct
-        if ct: c.append({"type":"p","text":" ".join(ct).strip()}); ct = []
+        nonlocal ct, li, in_li
+        if li: c.append({"type":"ul","items":li}); li=[]; in_li=False
+        if ct: c.append({"type":"p","text":fmt(" ".join(ct).strip())}); ct = []
     tbl = lambda l: l.startswith("|") and l.endswith("|")
+    lst = lambda l: l.startswith("- ") or l.startswith("* ")
     while i < len(lines):
         s = lines[i].strip()
-        if not s: ih=0 if ih and th else ih; i+=1; continue
+        if not s: fl(); i+=1; continue
         if s.startswith("# "): i+=1; continue
         if s.startswith("## "):
             fl()
             if ih and th and tr: c.append({"type":"table","data":{"headers":th,"rows":tr}})
-            th=tr=[]; ih=False; c.append({"type":"h2","text":s[3:].strip()}); i+=1; continue
+            th=tr=[]; ih=False; ct=[]
+            txt = fmt(s[3:].strip())
+            if txt: c.append({"type":"h2","text":txt})
+            i+=1; continue
         if tbl(s):
+            fl()
             cells = [x.strip() for x in s.split("|") if x.strip()]
             if not ih:
                 th=cells; ih=True
                 if i+1<len(lines) and re.match(r'^[\|\s\-\:]+$',lines[i+1].strip()): i+=1
-                fl()
             elif len(cells)==len(th): tr.append(cells)
             i+=1; continue
         if ih and th and tr: c.append({"type":"table","data":{"headers":th,"rows":tr}}); th=tr=[]; ih=False
+        if lst(s):
+            fl()
+            li.append(fmt(s[2:].strip())); in_li=True; i+=1; continue
         ct.append(s); i+=1
     fl()
     if ih and th and tr: c.append({"type":"table","data":{"headers":th,"rows":tr}})
     return c
 
 def gen(p):
-    r = OpenAI(api_key=AK,base_url=AB).chat.completions.create(model=MN,messages=[{"role":"system","content":"你是一个中文游戏搬砖编辑。输出纯Markdown。"},{"role":"user","content":p}],max_tokens=4096,temperature=0.8)
+    r = OpenAI(api_key=AK,base_url=AB).chat.completions.create(model=MN,messages=[{"role":"system","content":"你是一个有多年搬砖经验的玩家，说话像在游戏群里聊天，自然口语化，别写得像AI。直接用纯Markdown输出，不要代码块包裹。"},{"role":"user","content":p}],max_tokens=4096,temperature=0.9)
     m = r.choices[0].message.content.strip()
     print(f"  ↳ API: {len(m)} chars")
     x = re.search(r'```(?:markdown|md)?\s*([\s\S]+?)\s*```',m)
@@ -89,7 +105,7 @@ def views(g):
 def js_entry(t,c,slug):
     td=date.today().strftime("%Y-%m-%d")
     tl=sum(len(i.get("text","")) for i in c if i["type"]=="p")
-    rt=max(8,tl//100+1)
+    rt=max(3,tl//200+1)
     cj=json.dumps(c,ensure_ascii=False).replace("'","\\'")
     return f"""  {{
     id: '{slug}', game: '{t['game']}', title: '{t['title']}',
@@ -107,18 +123,28 @@ def ins_js(entry,slug):
 
 def upd_hp(slug):
     js=MJ.read_text(encoding="utf-8")
-    for m in re.finditer(r"(?<=hasPage = \[)(.*?)(?=\]\.includes)",js,re.DOTALL):
-        if f"'{slug}'" in m.group(0): print(f"  ↳ '{slug}' in hasPage"); return
-    if js.count("'mhxy-xinmi'")>=2:
-        js=js.replace("'mhxy-xinmi'",f"'mhxy-xinmi','{slug}'",2); MJ.write_text(js,encoding="utf-8"); print(f"  ✓ Updated hasPage"); return
+    hp_match = re.search(r"(?<=hasPage = \[)(.*?)(?=\]\.includes)",js,re.DOTALL)
+    if hp_match:
+        items = hp_match.group(0)
+        if f"'{slug}'" in items: print(f"  ↳ '{slug}' in hasPage"); return
+        new_items = items.rstrip() + f",'{slug}'"
+        js = js.replace(items, new_items)
+        MJ.write_text(js,encoding="utf-8")
+        print(f"  ✓ Updated hasPage")
+        return
     print("  ⚠ Could not update hasPage")
 
 def render(c,topic,slug):
     hp=[]; ti=[]; sc=0
     for it in c:
-        if it["type"]=="p": hp.append(f'    <p>{html.escape(it.get("text",""))}</p>')
+        if it["type"]=="p": hp.append(f'    <p>{it.get("text","")}</p>')
+        elif it["type"]=="ul":
+            items = "".join(f'<li>{html.escape(str(x))}</li>' for x in it.get("items",[]))
+            hp.append(f'    <ul>{items}</ul>')
         elif it["type"]=="h2":
-            hp.append(f'    <h2 id="s{sc}">{html.escape(it.get("text",""))}</h2>'); ti.append((f"s{sc}",it.get("text",""))); sc+=1
+            txt = it.get("text","")
+            if not txt: continue
+            hp.append(f'    <h2 id="s{sc}">{txt}</h2>'); ti.append((f"s{sc}",txt)); sc+=1
         elif it["type"]=="table":
             d=it.get("data",{}); hs=d.get("headers",[]); rs=d.get("rows",[])
             if hs and rs:
@@ -130,7 +156,7 @@ def render(c,topic,slug):
     toc=""
     if ti:
         toc='<div class="toc"><div class="toc-title">📖 目录导航</div><ul class="toc-list">'
-        for s,txt in ti: toc+=f'<li><a href="#{s}">{html.escape(txt)}</a></li>'
+        for s,txt in ti: toc+=f'<li><a href="#{s}">{txt}</a></li>'
         toc+="</ul></div>"
     return "\n".join(hp),toc,sc
 
@@ -139,15 +165,16 @@ def html_page(topic,c,slug):
     g=topic["game"]; ti=topic["title"]; d=topic["description"]; v=views(g)
     bh,toc,ns=render(c,topic,slug)
     tl=sum(len(i.get("text","")) for i in c if i["type"]=="p")
-    rt=max(8,tl//100+1)
+    rt=max(3,tl//200+1)
     related=""; same=[]
     for eid in existing():
         if eid==slug or len(same)>=2: continue
         try:
             et=(GD/f"{eid}.html").read_text(encoding="utf-8")
-            if f">{g}<" in et or f"🏷 {g}" in et:
-                m=re.search(r'<title>(.+?) - 搬砖营地',et)
-                if m: same.append((eid,m.group(1)))
+            m=re.search(r'<span[^>]*>🏷 (.+?)</span>',et)
+            if m and m.group(1)==g:
+                tm=re.search(r'<title>(.+?) - 搬砖营地',et)
+                if tm: same.append((eid,tm.group(1)))
         except: pass
     if same:
         related='<div class="related">\n<h2 id="s'+str(ns)+'">相关攻略推荐</h2>\n<div class="related-grid">\n'
