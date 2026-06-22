@@ -426,6 +426,12 @@ const GUIDES = [
     image: null, date: '2026-06-16', readTime: '5 分钟', views: '8.2k',
     content: []
   },
+  {
+    id: '2026-0622-game-news', game: '综合资讯', title: '2026年6月下旬游戏搬砖资讯：魔兽新版本、逆水寒八周年、流放之路2大改版',
+    desc: '6月下旬热门游戏更新：魔兽12.0.7真相之幕上线盘卷蛇岛+烈毒之渊团本；逆水寒八周年觉醒流派6月25日上线、黄金畅玩服7月10日预约；梦幻西游百宠仙池新召唤灵云霜；流放之路2 0.5.3终局玩法重做；暗黑不朽新职业术士。',
+    image: null, date: '2026-06-22', readTime: '5 分钟', views: '4.2k',
+    content: []
+  },
 ];
 
 const PLATFORMS = [
@@ -700,7 +706,7 @@ function renderGuideGrid(filter) {
 
   el.innerHTML = filtered.map(guide => {
     const bgColor = gameTheme[guide.game] || '#e74c3c';
-    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi','mhxy-2026-xiyuan','osrs-money','fifa-coin','jxsj3-brick','gjjy-account','jr-brick','tianyu-life','mmm-draco','fifa-2026-trading','2026-0616-game-news'].includes(guide.id);
+    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi','mhxy-2026-xiyuan','osrs-money','fifa-coin','jxsj3-brick','gjjy-account','jr-brick','tianyu-life','mmm-draco','fifa-2026-trading','2026-0616-game-news','2026-0622-game-news'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
     <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
@@ -1037,7 +1043,7 @@ function renderGuidesPage(filtered, activeFilter) {
 
   el.innerHTML = items.map(guide => {
     const bgColor = gameTheme[guide.game] || '#e74c3c';
-    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi','osrs-money','fifa-coin','jxsj3-brick','gjjy-account','jr-brick','tianyu-life','mmm-draco','fifa-2026-trading','2026-0616-game-news'].includes(guide.id);
+    const hasPage = ['mhxy-shimen','sjz-delta','nsh-xinjijie','newbie-guide','mhxy-wukai','poe2-league','qnyh-shenghuo','yys-shipian','newbie-2026','chd-fugu','yyjh-caiji','tymd-shenfen','liudao-lingke','mlbb-pets','ys-account','sr-material','ywj-skin','ymjh-daily','wmsj-equip','zhuxian-pets','wzry-pifu','hpjy-pifu','lolm-account','sgzzl-ziyuan','stzb-account','bh3-dailian','ff14-gold','ht-make','nsh-daolian','mhxy-huanzhuang','wow-tbc','delta-adv','dnf-adv','top10-2026','newbie-choice','wow-classic','dnf-fengbao','nsh-richang','delta-quanyy','eve-mining','torch-new','albion-guide','tlbb-setup','dnfj-wuhuan','wd-shuadao','lostark-guide','jxsj-wuji-guide','warframe-guide','thyj-brick','cq-dajin','mrzh-ziyuan','mhxy-xinmi','osrs-money','fifa-coin','jxsj3-brick','gjjy-account','jr-brick','tianyu-life','mmm-draco','fifa-2026-trading','2026-0616-game-news','2026-0622-game-news'].includes(guide.id);
     const href = hasPage ? `guides/${guide.id}.html` : `#guide/${guide.id}`;
     return `
     <a href="${href}" class="guide-card" onclick="if(!event.ctrlKey&&!event.metaKey){event.preventDefault();location.hash='#guide/${guide.id}'}">
